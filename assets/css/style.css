@@ -915,9 +915,6 @@ tr:last-child td {
 }
 
 .topic-card-icon {
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-border);
-  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
