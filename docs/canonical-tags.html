@@ -1,276 +1,445 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Canonical Tags — Duplicate Content Resolution — SEO Reference</title>
-  <meta name="description" content="How to implement canonical tags to consolidate duplicate content, prevent URL parameter canonicalization, and set up cross-domain canonical references." />
-  <link rel="canonical" href="https://kb-rc.github.io/SEO-For-Developers/docs/canonical-tags.html" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/logo.avif" type="image/avif">
+    <title>Canonical Tags - Duplicate Content Resolution - SEO Reference</title>
+    <meta
+      name="description"
+      content="How to implement canonical tags to consolidate duplicate content, prevent URL parameter canonicalization, and set up cross-domain canonical references."
+    />
+    <link
+      rel="canonical"
+      href="https://kb-rc.github.io/SEO-For-Developers/docs/canonical-tags.html"
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://kb-rc.github.io/SEO-For-Developers/docs/canonical-tags.html" />
-  <meta property="og:title"       content="Canonical Tags — Duplicate Content Resolution — SEO Reference" />
-  <meta property="og:description" content="How to implement canonical tags to consolidate duplicate content, prevent URL parameter canonicalization, and set up cross-domain canonical references." />
-  <meta property="og:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name"   content="SEO Reference" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kb-rc.github.io/SEO-For-Developers/docs/canonical-tags.html"
+    />
+    <meta
+      property="og:title"
+      content="Canonical Tags - Duplicate Content Resolution - SEO Reference"
+    />
+    <meta
+      property="og:description"
+      content="How to implement canonical tags to consolidate duplicate content, prevent URL parameter canonicalization, and set up cross-domain canonical references."
+    />
+    <meta
+      property="og:image"
+      content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="SEO For Developers" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@seodocsdev" />
-  <meta name="twitter:title"       content="Canonical Tags — Duplicate Content Resolution — SEO Reference" />
-  <meta name="twitter:description" content="How to implement canonical tags to consolidate duplicate content, prevent URL parameter canonicalization, and set up cross-domain canonical references." />
-  <meta name="twitter:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@seodocsdev" />
+    <meta
+      name="twitter:title"
+      content="Canonical Tags - Duplicate Content Resolution - SEO Reference"
+    />
+    <meta
+      name="twitter:description"
+      content="How to implement canonical tags to consolidate duplicate content, prevent URL parameter canonicalization, and set up cross-domain canonical references."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png"
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
-    "name": "SEO Reference",
-    "url": "https://kb-rc.github.io/SEO-For-Developers/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
-      "width": 512,
-      "height": 512
-    }
-  }
-  </script>
-
-  <!-- JSON-LD: Person / E-E-A-T -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
-    "name": "SEO Reference",
-    "url": "https://kb-rc.github.io/SEO-For-Developers/",
-    "jobTitle": "Technical SEO Documentation",
-    "knowsAbout": ["Technical SEO", "Structured Data", "Core Web Vitals", "JavaScript SEO", "Crawling and Indexing"]
-  }
-  </script>
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kb-rc.github.io/SEO-For-Developers/" },
-      { "@type": "ListItem", "position": 2, "name": "Canonical Tags", "item": "https://kb-rc.github.io/SEO-For-Developers/docs/canonical-tags.html" }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
       {
-        "@type": "Question",
-        "name": "Should every page have a canonical tag?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Even pages with no duplicates should carry a self-referencing canonical. This prevents unintended canonicalization from URL parameters and stops Googlebot from choosing its own canonical."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Is a canonical tag a directive or a hint?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "It is a hint, not a directive. Google may ignore it if it detects conflicting signals — for example, if the canonical URL is noindexed or returns a non-200 status. Ensure the canonical URL is accessible, indexable, and returns HTTP 200."
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
+        "name": "SEO For Developers",
+        "url": "https://kb-rc.github.io/SEO-For-Developers/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
+          "width": 512,
+          "height": 512
         }
       }
-    ]
-  }
-  </script>
-</head>
+    </script>
 
-<body data-page="canonical-tags">
+    <!-- JSON-LD: Person / E-E-A-T -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
+        "name": "Kishore Babu",
+        "url": "https://kb-rc.github.io/SEO-For-Developers/",
+        "jobTitle": "Technical SEO Documentation",
+        "knowsAbout": [
+          "Technical SEO",
+          "Structured Data",
+          "Core Web Vitals",
+          "JavaScript SEO",
+          "Crawling and Indexing"
+        ]
+      }
+    </script>
 
-  <header class="header" role="banner">
-    <div class="header-logo">
-      <a href="../index.html">
-        <div class="logo-icon">
-          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM11.5 9.5l2 4-2 .5-1-2.5-1 2.5-2-.5z"/>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kb-rc.github.io/SEO-For-Developers/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Canonical Tags",
+            "item": "https://kb-rc.github.io/SEO-For-Developers/docs/canonical-tags.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Should every page have a canonical tag?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Even pages with no duplicates should carry a self-referencing canonical. This prevents unintended canonicalization from URL parameters and stops Googlebot from choosing its own canonical."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is a canonical tag a directive or a hint?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It is a hint, not a directive. Google may ignore it if it detects conflicting signals - for example, if the canonical URL is noindexed or returns a non-200 status. Ensure the canonical URL is accessible, indexable, and returns HTTP 200."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body data-page="canonical-tags">
+    <header class="header" role="banner">
+      <div class="header-logo">
+        <a href="../index.html">
+          <div class="logo-icon"><img src="../assets/logo.avif" alt="SEO For Developers" width="24" height="24"></div>
+          <span class="logo-text">SEO<span> For Developers</span></span>
+        </a>
+      </div>
+      <div class="header-actions">
+        <button
+          class="btn-icon mobile-menu-btn"
+          id="mobile-menu-btn"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M1 3h14M1 8h14M1 13h14" />
           </svg>
+        </button>
+        <button
+          class="btn-icon"
+          id="theme-toggle"
+          title="Toggle theme"
+          aria-label="Toggle color theme"
+        >
+          <svg
+            id="icon-sun"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <path
+              d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+            />
+          </svg>
+          <svg
+            id="icon-moon"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav
+        class="sidebar"
+        id="sidebar"
+        role="navigation"
+        aria-label="Documentation"
+      >
+        <div class="nav-group">
+          <div class="nav-group-label">Getting Started</div>
+          <a class="nav-link" data-page="intro" href="../index.html"
+            ><span class="dot"></span>Introduction</a
+          >
         </div>
-        <span class="logo-text">SEO<span>Ref</span></span>
-      </a>
-    </div>
-    <nav class="header-nav" role="navigation" aria-label="Primary">
-      <div class="header-search" role="search" aria-label="Site search">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5l3 3"/>
-        </svg>
-        Search docs&hellip;
-        <kbd>&#8984;K</kbd>
-      </div>
-    </nav>
-    <div class="header-actions">
-      <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M1 3h14M1 8h14M1 13h14"/>
-        </svg>
-      </button>
-      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">
-        <svg id="icon-sun" viewBox="0 0 16 16" fill="currentColor" style="display:none" aria-hidden="true">
-          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-        </svg>
-        <svg id="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+        <div class="nav-group">
+          <div class="nav-group-label">On-Page Tags</div>
+          <a class="nav-link" data-page="title-tags" href="title-tags.html"
+            ><span class="dot"></span>Title Tags</a
+          >
+          <a
+            class="nav-link"
+            data-page="meta-descriptions"
+            href="meta-descriptions.html"
+            ><span class="dot"></span>Meta Descriptions</a
+          >
+          <a class="nav-link" data-page="open-graph" href="open-graph.html"
+            ><span class="dot"></span>Open Graph / Social</a
+          >
+          <a
+            class="nav-link"
+            data-page="canonical-tags"
+            href="canonical-tags.html"
+            ><span class="dot"></span>Canonical Tags</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Crawling &amp; Indexing</div>
+          <a class="nav-link" data-page="robots-txt" href="robots-txt.html"
+            ><span class="dot"></span>robots.txt</a
+          >
+          <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"
+            ><span class="dot"></span>sitemap.xml</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Structured Data</div>
+          <a class="nav-link" data-page="json-ld" href="json-ld.html"
+            ><span class="dot"></span>JSON-LD Basics</a
+          >
+          <a class="nav-link" data-page="faq-schema" href="faq-schema.html"
+            ><span class="dot"></span>FAQ Schema</a
+          >
+          <a
+            class="nav-link"
+            data-page="organization-schema"
+            href="organization-schema.html"
+            ><span class="dot"></span>Organization Schema</a
+          >
+          <a class="nav-link" data-page="author-eeat" href="author-eeat.html"
+            ><span class="dot"></span>Author / E-E-A-T Schema</a
+          >
+          <a
+            class="nav-link"
+            data-page="breadcrumb-schema"
+            href="breadcrumb-schema.html"
+            ><span class="dot"></span>Breadcrumb Schema</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Content &amp; Performance</div>
+          <a class="nav-link" data-page="image-seo" href="image-seo.html"
+            ><span class="dot"></span>Image SEO</a
+          >
+          <a
+            class="nav-link"
+            data-page="performance-seo"
+            href="performance-seo.html"
+            ><span class="dot"></span>Performance SEO</a
+          >
+          <a
+            class="nav-link"
+            data-page="semantic-html"
+            href="semantic-html.html"
+            ><span class="dot"></span>Semantic HTML</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Architecture</div>
+          <a
+            class="nav-link"
+            data-page="internal-linking"
+            href="internal-linking.html"
+            ><span class="dot"></span>Internal Linking</a
+          >
+          <a
+            class="nav-link"
+            data-page="url-structure"
+            href="url-structure.html"
+            ><span class="dot"></span>URL Structure</a
+          >
+        </div>
+      </nav>
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <div class="layout">
+      <main class="main" role="main" id="main-content">
+        <div class="content">
+          <article aria-labelledby="canonical-h1">
+            <h1 id="canonical-h1">Canonical Tags</h1>
 
-    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Documentation">
-      <div class="nav-group">
-        <div class="nav-group-label">Getting Started</div>
-        <a class="nav-link" data-page="intro" href="../index.html"><span class="dot"></span>Introduction</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">On-Page Tags</div>
-        <a class="nav-link" data-page="title-tags" href="title-tags.html"><span class="dot"></span>Title Tags</a>
-        <a class="nav-link" data-page="meta-descriptions" href="meta-descriptions.html"><span class="dot"></span>Meta Descriptions</a>
-        <a class="nav-link" data-page="open-graph" href="open-graph.html"><span class="dot"></span>Open Graph / Social</a>
-        <a class="nav-link" data-page="canonical-tags" href="canonical-tags.html"><span class="dot"></span>Canonical Tags</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Crawling &amp; Indexing</div>
-        <a class="nav-link" data-page="robots-txt" href="robots-txt.html"><span class="dot"></span>robots.txt</a>
-        <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"><span class="dot"></span>sitemap.xml</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Structured Data</div>
-        <a class="nav-link" data-page="json-ld" href="json-ld.html"><span class="dot"></span>JSON-LD Basics</a>
-        <a class="nav-link" data-page="faq-schema" href="faq-schema.html"><span class="dot"></span>FAQ Schema</a>
-        <a class="nav-link" data-page="organization-schema" href="organization-schema.html"><span class="dot"></span>Organization Schema</a>
-        <a class="nav-link" data-page="author-eeat" href="author-eeat.html"><span class="dot"></span>Author / E-E-A-T Schema</a>
-        <a class="nav-link" data-page="breadcrumb-schema" href="breadcrumb-schema.html"><span class="dot"></span>Breadcrumb Schema</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Content &amp; Performance</div>
-        <a class="nav-link" data-page="image-seo" href="image-seo.html"><span class="dot"></span>Image SEO</a>
-        <a class="nav-link" data-page="performance-seo" href="performance-seo.html"><span class="dot"></span>Performance SEO</a>
-        <a class="nav-link" data-page="semantic-html" href="semantic-html.html"><span class="dot"></span>Semantic HTML</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Architecture</div>
-        <a class="nav-link" data-page="internal-linking" href="internal-linking.html"><span class="dot"></span>Internal Linking</a>
-        <a class="nav-link" data-page="url-structure" href="url-structure.html"><span class="dot"></span>URL Structure</a>
-      </div>
-    </nav>
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <main class="main" role="main" id="main-content">
-      <div class="content">
-
-        <article aria-labelledby="canonical-h1">
-          <h1 id="canonical-h1">Canonical Tags</h1>
-
-          <div class="def-box">
-            <span class="callout-icon"></span>
-            <div><code>&lt;link rel="canonical"&gt;</code> tells search engines which URL is the authoritative version when duplicate or near-duplicate content exists across multiple URLs. Link equity and ranking signals are consolidated to the canonical URL.</div>
-          </div>
-
-          <h2 id="canon-self">Self-referencing canonical</h2>
-          <p>Every page — including pages with no known duplicates — should carry a self-referencing canonical tag. Without it, search engines may independently decide which version of the URL to treat as canonical when parameters, trailing slashes, or protocol variants are present (e.g. <code>https</code> vs <code>http</code>). The canonical used in <code>index.html</code>:</p>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">index.html</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="canon-self-block">Copy</button>
+            <div class="def-box">
+              <span class="callout-icon"></span>
+              <div>
+                <code>&lt;link rel="canonical"&gt;</code> tells search engines
+                which URL is the authoritative version when duplicate or
+                near-duplicate content exists across multiple URLs. Link equity
+                and ranking signals are consolidated to the canonical URL.
               </div>
             </div>
-            <pre id="canon-self-block"><code><span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span>=<span class="s">"canonical"</span> <span class="a">href</span>=<span class="s">"https://kb-rc.github.io/SEO-For-Developers/"</span> <span class="p">/&gt;</span></code></pre>
-          </div>
 
-          <h2 id="canon-dup">Duplicate content consolidation</h2>
-          <p>When the same or substantially similar content appears at multiple URLs — for example, a paginated page with URL parameters — the duplicate variants should point to the primary URL via a canonical tag. This consolidates ranking signals without removing the alternative URLs from the site.</p>
+            <h2 id="canon-self">Self-referencing canonical</h2>
+            <p>
+              Every page - including pages with no known duplicates - should
+              carry a self-referencing canonical tag. Without it, search engines
+              may independently decide which version of the URL to treat as
+              canonical when parameters, trailing slashes, or protocol variants
+              are present (e.g. <code>https</code> vs <code>http</code>). The
+              canonical used in <code>index.html</code>:
+            </p>
 
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">docs/title-tags.html?ref=sidebar (duplicate variant)</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="canon-dup-block">Copy</button>
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename">index.html</span>
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="canon-self-block">
+                    Copy
+                  </button>
+                </div>
               </div>
+              <pre
+                id="canon-self-block"
+              ><code><span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span>=<span class="s">"canonical"</span> <span class="a">href</span>=<span class="s">"https://kb-rc.github.io/SEO-For-Developers/"</span> <span class="p">/&gt;</span></code></pre>
             </div>
-            <pre id="canon-dup-block"><code><span class="c">&lt;!-- On the parameterized duplicate, point back to the canonical URL --&gt;</span>
+
+            <h2 id="canon-dup">Duplicate content consolidation</h2>
+            <p>
+              When the same or substantially similar content appears at multiple
+              URLs - for example, a paginated page with URL parameters - the
+              duplicate variants should point to the primary URL via a canonical
+              tag. This consolidates ranking signals without removing the
+              alternative URLs from the site.
+            </p>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename"
+                  >docs/title-tags.html?ref=sidebar (duplicate variant)</span
+                >
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="canon-dup-block">
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <pre
+                id="canon-dup-block"
+              ><code><span class="c">&lt;!-- On the parameterized duplicate, point back to the canonical URL --&gt;</span>
 <span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span>=<span class="s">"canonical"</span>
       <span class="a">href</span>=<span class="s">"https://kb-rc.github.io/SEO-For-Developers/docs/title-tags.html"</span> <span class="p">/&gt;</span>
 
 <span class="c">&lt;!-- For paginated content, page 2 points to itself (not page 1) --&gt;</span>
 <span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span>=<span class="s">"canonical"</span>
       <span class="a">href</span>=<span class="s">"https://kb-rc.github.io/SEO-For-Developers/docs/title-tags.html?page=2"</span> <span class="p">/&gt;</span></code></pre>
-          </div>
-
-          <h2 id="canon-cross">Cross-domain canonical</h2>
-          <p>When the same content is syndicated or published on a second domain, the syndicated version should point its canonical tag back to the original source. This tells Google which site owns the content and prevents the syndication from competing with or outranking the original.</p>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">syndicated-site.com/title-tags (cross-domain duplicate)</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="canon-cross-block">Copy</button>
-              </div>
             </div>
-            <pre id="canon-cross-block"><code><span class="c">&lt;!--
+
+            <h2 id="canon-cross">Cross-domain canonical</h2>
+            <p>
+              When the same content is syndicated or published on a second
+              domain, the syndicated version should point its canonical tag back
+              to the original source. This tells Google which site owns the
+              content and prevents the syndication from competing with or
+              outranking the original.
+            </p>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename"
+                  >syndicated-site.com/title-tags (cross-domain duplicate)</span
+                >
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="canon-cross-block">
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <pre id="canon-cross-block"><code><span class="c">&lt;!--
   Published on: https://syndicated-site.com/title-tags
   Original at:  https://kb-rc.github.io/SEO-For-Developers/docs/title-tags.html
 --&gt;</span>
 <span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span>=<span class="s">"canonical"</span>
       <span class="a">href</span>=<span class="s">"https://kb-rc.github.io/SEO-For-Developers/docs/title-tags.html"</span> <span class="p">/&gt;</span></code></pre>
-          </div>
+            </div>
 
-          <div class="callout warn">
-            <span class="callout-icon"></span>
-            <div><strong>Canonical is a hint, not a directive.</strong> Google may override the canonical tag if it detects conflicting signals — for example, if the canonical URL returns a non-200 status code, is blocked by <code>robots.txt</code>, or has a <code>noindex</code> directive. Always ensure the canonical URL is accessible, indexable, and returns HTTP 200. Do not point canonicals at redirect chains.</div>
-          </div>
+            <div class="callout warn">
+              <span class="callout-icon"></span>
+              <div>
+                <strong>Canonical is a hint, not a directive.</strong> Google
+                may override the canonical tag if it detects conflicting signals
+                - for example, if the canonical URL returns a non-200 status
+                code, is blocked by <code>robots.txt</code>, or has a
+                <code>noindex</code> directive. Always ensure the canonical URL
+                is accessible, indexable, and returns HTTP 200. Do not point
+                canonicals at redirect chains.
+              </div>
+            </div>
 
-          <div class="page-nav">
-            <a class="page-nav-item" href="open-graph.html">
-              <div class="page-nav-label">&#8592; Previous</div>
-              <div class="page-nav-title">Open Graph / Social</div>
-            </a>
-            <a class="page-nav-item next" href="robots-txt.html">
-              <div class="page-nav-label">Next &#8594;</div>
-              <div class="page-nav-title">robots.txt</div>
-            </a>
-          </div>
-        </article>
+            <div class="page-nav">
+              <a class="page-nav-item" href="open-graph.html">
+                <div class="page-nav-label">&#8592; Previous</div>
+                <div class="page-nav-title">Open Graph / Social</div>
+              </a>
+              <a class="page-nav-item next" href="robots-txt.html">
+                <div class="page-nav-label">Next &#8594;</div>
+                <div class="page-nav-title">robots.txt</div>
+              </a>
+            </div>
+          </article>
+        </div>
+      </main>
 
-      </div>
-    </main>
+      <aside class="toc" aria-label="On this page">
+        <div class="toc-title">On this page</div>
+        <div id="toc-content"></div>
+      </aside>
+    </div>
 
-    <aside class="toc" aria-label="On this page">
-      <div class="toc-title">On this page</div>
-      <div id="toc-content"></div>
-    </aside>
-
-  </div>
-
-  <script src="../assets/js/seo.js" defer></script>
-</body>
+    <script src="../assets/js/seo.js" defer></script>
+  </body>
 </html>

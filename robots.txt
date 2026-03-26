@@ -1,4 +1,4 @@
-# robots.txt — https://kb-rc.github.io/SEO-For-Developers/
+# robots.txt - https://kb-rc.github.io/SEO-For-Developers/
 # Allow all crawlers to access the full site
 User-agent: *
 Allow: /

@@ -1,208 +1,352 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Semantic HTML for SEO — Document Structure &amp; Landmarks — SEO Reference</title>
-  <meta name="description" content="How to use semantic HTML elements for SEO and accessibility. Covers landmark elements, heading hierarchy, article and section usage, and microdata for structured content." />
-  <link rel="canonical" href="https://kb-rc.github.io/SEO-For-Developers/docs/semantic-html.html" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/logo.avif" type="image/avif">
+    <title>
+      Semantic HTML for SEO - Document Structure &amp; Landmarks - SEO Reference
+    </title>
+    <meta
+      name="description"
+      content="How to use semantic HTML elements for SEO and accessibility. Covers landmark elements, heading hierarchy, article and section usage, and microdata for structured content."
+    />
+    <link
+      rel="canonical"
+      href="https://kb-rc.github.io/SEO-For-Developers/docs/semantic-html.html"
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://kb-rc.github.io/SEO-For-Developers/docs/semantic-html.html" />
-  <meta property="og:title"       content="Semantic HTML for SEO — Document Structure &amp; Landmarks — SEO Reference" />
-  <meta property="og:description" content="How to use semantic HTML elements for SEO and accessibility. Covers landmark elements, heading hierarchy, article and section usage, and microdata for structured content." />
-  <meta property="og:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name"   content="SEO Reference" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kb-rc.github.io/SEO-For-Developers/docs/semantic-html.html"
+    />
+    <meta
+      property="og:title"
+      content="Semantic HTML for SEO - Document Structure &amp; Landmarks - SEO Reference"
+    />
+    <meta
+      property="og:description"
+      content="How to use semantic HTML elements for SEO and accessibility. Covers landmark elements, heading hierarchy, article and section usage, and microdata for structured content."
+    />
+    <meta
+      property="og:image"
+      content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="SEO For Developers" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@seodocsdev" />
-  <meta name="twitter:title"       content="Semantic HTML for SEO — Document Structure &amp; Landmarks — SEO Reference" />
-  <meta name="twitter:description" content="How to use semantic HTML elements for SEO and accessibility. Covers landmark elements, heading hierarchy, article and section usage, and microdata for structured content." />
-  <meta name="twitter:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@seodocsdev" />
+    <meta
+      name="twitter:title"
+      content="Semantic HTML for SEO - Document Structure &amp; Landmarks - SEO Reference"
+    />
+    <meta
+      name="twitter:description"
+      content="How to use semantic HTML elements for SEO and accessibility. Covers landmark elements, heading hierarchy, article and section usage, and microdata for structured content."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png"
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
-    "name": "SEO Reference",
-    "url": "https://kb-rc.github.io/SEO-For-Developers/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
-      "width": 512,
-      "height": 512
-    }
-  }
-  </script>
-
-  <!-- JSON-LD: Person / E-E-A-T -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
-    "name": "SEO Reference",
-    "url": "https://kb-rc.github.io/SEO-For-Developers/",
-    "jobTitle": "Technical SEO Documentation",
-    "knowsAbout": ["Technical SEO", "Structured Data", "Core Web Vitals", "JavaScript SEO", "Crawling and Indexing"]
-  }
-  </script>
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kb-rc.github.io/SEO-For-Developers/" },
-      { "@type": "ListItem", "position": 2, "name": "Semantic HTML", "item": "https://kb-rc.github.io/SEO-For-Developers/docs/semantic-html.html" }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
       {
-        "@type": "Question",
-        "name": "How many h1 elements should a page have?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "One. Each page should have exactly one h1 element whose topic aligns with the page title tag. Multiple h1 elements are technically valid in HTML5 sectioning contexts, but Google's guidance recommends one h1 per page for clear content hierarchy."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is the difference between article and section?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "An article is a self-contained, independently distributable piece of content (a blog post, news article, comment). A section is a thematic grouping within a page that would not make sense in isolation. Use article for content that could be syndicated; use section for content divisions within a page."
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
+        "name": "SEO For Developers",
+        "url": "https://kb-rc.github.io/SEO-For-Developers/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
+          "width": 512,
+          "height": 512
         }
       }
-    ]
-  }
-  </script>
-</head>
+    </script>
 
-<body data-page="semantic-html">
+    <!-- JSON-LD: Person / E-E-A-T -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
+        "name": "Kishore Babu",
+        "url": "https://kb-rc.github.io/SEO-For-Developers/",
+        "jobTitle": "Technical SEO Documentation",
+        "knowsAbout": [
+          "Technical SEO",
+          "Structured Data",
+          "Core Web Vitals",
+          "JavaScript SEO",
+          "Crawling and Indexing"
+        ]
+      }
+    </script>
 
-  <header class="header" role="banner">
-    <div class="header-logo">
-      <a href="../index.html">
-        <div class="logo-icon">
-          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM11.5 9.5l2 4-2 .5-1-2.5-1 2.5-2-.5z"/>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kb-rc.github.io/SEO-For-Developers/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Semantic HTML",
+            "item": "https://kb-rc.github.io/SEO-For-Developers/docs/semantic-html.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How many h1 elements should a page have?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "One. Each page should have exactly one h1 element whose topic aligns with the page title tag. Multiple h1 elements are technically valid in HTML5 sectioning contexts, but Google's guidance recommends one h1 per page for clear content hierarchy."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the difference between article and section?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "An article is a self-contained, independently distributable piece of content (a blog post, news article, comment). A section is a thematic grouping within a page that would not make sense in isolation. Use article for content that could be syndicated; use section for content divisions within a page."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body data-page="semantic-html">
+    <header class="header" role="banner">
+      <div class="header-logo">
+        <a href="../index.html">
+          <div class="logo-icon"><img src="../assets/logo.avif" alt="SEO For Developers" width="24" height="24"></div>
+          <span class="logo-text">SEO<span> For Developers</span></span>
+        </a>
+      </div>
+      <div class="header-actions">
+        <button
+          class="btn-icon mobile-menu-btn"
+          id="mobile-menu-btn"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M1 3h14M1 8h14M1 13h14" />
           </svg>
+        </button>
+        <button
+          class="btn-icon"
+          id="theme-toggle"
+          title="Toggle theme"
+          aria-label="Toggle color theme"
+        >
+          <svg
+            id="icon-sun"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <path
+              d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+            />
+          </svg>
+          <svg
+            id="icon-moon"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav
+        class="sidebar"
+        id="sidebar"
+        role="navigation"
+        aria-label="Documentation"
+      >
+        <div class="nav-group">
+          <div class="nav-group-label">Getting Started</div>
+          <a class="nav-link" data-page="intro" href="../index.html"
+            ><span class="dot"></span>Introduction</a
+          >
         </div>
-        <span class="logo-text">SEO<span>Ref</span></span>
-      </a>
-    </div>
-    <nav class="header-nav" role="navigation" aria-label="Primary">
-      <div class="header-search" role="search" aria-label="Site search">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5l3 3"/>
-        </svg>
-        Search docs&hellip;
-        <kbd>&#8984;K</kbd>
-      </div>
-    </nav>
-    <div class="header-actions">
-      <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M1 3h14M1 8h14M1 13h14"/>
-        </svg>
-      </button>
-      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">
-        <svg id="icon-sun" viewBox="0 0 16 16" fill="currentColor" style="display:none" aria-hidden="true">
-          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-        </svg>
-        <svg id="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+        <div class="nav-group">
+          <div class="nav-group-label">On-Page Tags</div>
+          <a class="nav-link" data-page="title-tags" href="title-tags.html"
+            ><span class="dot"></span>Title Tags</a
+          >
+          <a
+            class="nav-link"
+            data-page="meta-descriptions"
+            href="meta-descriptions.html"
+            ><span class="dot"></span>Meta Descriptions</a
+          >
+          <a class="nav-link" data-page="open-graph" href="open-graph.html"
+            ><span class="dot"></span>Open Graph / Social</a
+          >
+          <a
+            class="nav-link"
+            data-page="canonical-tags"
+            href="canonical-tags.html"
+            ><span class="dot"></span>Canonical Tags</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Crawling &amp; Indexing</div>
+          <a class="nav-link" data-page="robots-txt" href="robots-txt.html"
+            ><span class="dot"></span>robots.txt</a
+          >
+          <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"
+            ><span class="dot"></span>sitemap.xml</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Structured Data</div>
+          <a class="nav-link" data-page="json-ld" href="json-ld.html"
+            ><span class="dot"></span>JSON-LD Basics</a
+          >
+          <a class="nav-link" data-page="faq-schema" href="faq-schema.html"
+            ><span class="dot"></span>FAQ Schema</a
+          >
+          <a
+            class="nav-link"
+            data-page="organization-schema"
+            href="organization-schema.html"
+            ><span class="dot"></span>Organization Schema</a
+          >
+          <a class="nav-link" data-page="author-eeat" href="author-eeat.html"
+            ><span class="dot"></span>Author / E-E-A-T Schema</a
+          >
+          <a
+            class="nav-link"
+            data-page="breadcrumb-schema"
+            href="breadcrumb-schema.html"
+            ><span class="dot"></span>Breadcrumb Schema</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Content &amp; Performance</div>
+          <a class="nav-link" data-page="image-seo" href="image-seo.html"
+            ><span class="dot"></span>Image SEO</a
+          >
+          <a
+            class="nav-link"
+            data-page="performance-seo"
+            href="performance-seo.html"
+            ><span class="dot"></span>Performance SEO</a
+          >
+          <a
+            class="nav-link"
+            data-page="semantic-html"
+            href="semantic-html.html"
+            ><span class="dot"></span>Semantic HTML</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Architecture</div>
+          <a
+            class="nav-link"
+            data-page="internal-linking"
+            href="internal-linking.html"
+            ><span class="dot"></span>Internal Linking</a
+          >
+          <a
+            class="nav-link"
+            data-page="url-structure"
+            href="url-structure.html"
+            ><span class="dot"></span>URL Structure</a
+          >
+        </div>
+      </nav>
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <div class="layout">
+      <main class="main" role="main" id="main-content">
+        <div class="content">
+          <article aria-labelledby="sem-html-h1">
+            <h1 id="sem-html-h1">Semantic HTML for SEO</h1>
 
-    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Documentation">
-      <div class="nav-group">
-        <div class="nav-group-label">Getting Started</div>
-        <a class="nav-link" data-page="intro" href="../index.html"><span class="dot"></span>Introduction</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">On-Page Tags</div>
-        <a class="nav-link" data-page="title-tags" href="title-tags.html"><span class="dot"></span>Title Tags</a>
-        <a class="nav-link" data-page="meta-descriptions" href="meta-descriptions.html"><span class="dot"></span>Meta Descriptions</a>
-        <a class="nav-link" data-page="open-graph" href="open-graph.html"><span class="dot"></span>Open Graph / Social</a>
-        <a class="nav-link" data-page="canonical-tags" href="canonical-tags.html"><span class="dot"></span>Canonical Tags</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Crawling &amp; Indexing</div>
-        <a class="nav-link" data-page="robots-txt" href="robots-txt.html"><span class="dot"></span>robots.txt</a>
-        <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"><span class="dot"></span>sitemap.xml</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Structured Data</div>
-        <a class="nav-link" data-page="json-ld" href="json-ld.html"><span class="dot"></span>JSON-LD Basics</a>
-        <a class="nav-link" data-page="faq-schema" href="faq-schema.html"><span class="dot"></span>FAQ Schema</a>
-        <a class="nav-link" data-page="organization-schema" href="organization-schema.html"><span class="dot"></span>Organization Schema</a>
-        <a class="nav-link" data-page="author-eeat" href="author-eeat.html"><span class="dot"></span>Author / E-E-A-T Schema</a>
-        <a class="nav-link" data-page="breadcrumb-schema" href="breadcrumb-schema.html"><span class="dot"></span>Breadcrumb Schema</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Content &amp; Performance</div>
-        <a class="nav-link" data-page="image-seo" href="image-seo.html"><span class="dot"></span>Image SEO</a>
-        <a class="nav-link" data-page="performance-seo" href="performance-seo.html"><span class="dot"></span>Performance SEO</a>
-        <a class="nav-link" data-page="semantic-html" href="semantic-html.html"><span class="dot"></span>Semantic HTML</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Architecture</div>
-        <a class="nav-link" data-page="internal-linking" href="internal-linking.html"><span class="dot"></span>Internal Linking</a>
-        <a class="nav-link" data-page="url-structure" href="url-structure.html"><span class="dot"></span>URL Structure</a>
-      </div>
-    </nav>
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <main class="main" role="main" id="main-content">
-      <div class="content">
-
-        <article aria-labelledby="sem-html-h1">
-          <h1 id="sem-html-h1">Semantic HTML for SEO</h1>
-
-          <div class="def-box">
-            <span class="callout-icon"></span>
-            <div>Semantic HTML uses elements that carry intrinsic meaning — <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>, <code>&lt;footer&gt;</code> — rather than generic <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> wrappers. Correct landmark usage helps Googlebot understand page structure and improves accessibility for screen reader users.</div>
-          </div>
-
-          <h2 id="sem-layout">Document structure</h2>
-          <p>The following shows the full landmark structure used on every documentation page on this site. Each landmark element maps to a WAI-ARIA role, which both assistive technologies and search engines use to understand the page's information architecture.</p>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">docs/[page].html — body structure</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="sem-layout">Copy</button>
+            <div class="def-box">
+              <span class="callout-icon"></span>
+              <div>
+                Semantic HTML uses elements that carry intrinsic meaning -
+                <code>&lt;article&gt;</code>, <code>&lt;nav&gt;</code>,
+                <code>&lt;main&gt;</code>, <code>&lt;header&gt;</code>,
+                <code>&lt;footer&gt;</code> - rather than generic
+                <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> wrappers.
+                Correct landmark usage helps Googlebot understand page structure
+                and improves accessibility for screen reader users.
               </div>
             </div>
-            <pre id="sem-layout"><code><span class="p">&lt;</span><span class="t">body</span><span class="p">&gt;</span>
+
+            <h2 id="sem-layout">Document structure</h2>
+            <p>
+              The following shows the full landmark structure used on every
+              documentation page on this site. Each landmark element maps to a
+              WAI-ARIA role, which both assistive technologies and search
+              engines use to understand the page's information architecture.
+            </p>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename"
+                  >docs/[page].html - body structure</span
+                >
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="sem-layout">Copy</button>
+                </div>
+              </div>
+              <pre
+                id="sem-layout"
+              ><code><span class="p">&lt;</span><span class="t">body</span><span class="p">&gt;</span>
 
   <span class="c">&lt;!-- Site-wide header: logo, primary nav, search, theme toggle --&gt;</span>
   <span class="p">&lt;</span><span class="t">header</span> <span class="a">class</span><span class="p">=</span><span class="s">"header"</span> <span class="a">role</span><span class="p">=</span><span class="s">"banner"</span><span class="p">&gt;</span>
@@ -246,79 +390,136 @@
   <span class="p">&lt;/</span><span class="t">div</span><span class="p">&gt;</span>
 
 <span class="p">&lt;/</span><span class="t">body</span><span class="p">&gt;</span></code></pre>
-          </div>
-
-          <h2 id="sem-headings">Heading hierarchy</h2>
-          <p>Headings create the document outline that search engines use to understand content structure. Follow these rules on every page:</p>
-          <ul>
-            <li><strong>One h1 per page.</strong> The h1 topic must align with the <code>&lt;title&gt;</code> tag. It is the primary signal for the page's core topic.</li>
-            <li><strong>h2 for major sections.</strong> Each h2 introduces a top-level topic that supports the h1. All h2s on this page (Document structure, Heading hierarchy, Landmark elements, Microdata) are direct subtopics of "Semantic HTML for SEO".</li>
-            <li><strong>h3 for subsections.</strong> Use h3 inside an h2 section for further subdivision. Never skip levels — jumping from h2 to h4 breaks the document outline.</li>
-            <li><strong>Never use headings for visual styling.</strong> If you need large bold text that is not a structural heading, use CSS on a <code>&lt;p&gt;</code> or <code>&lt;span&gt;</code>. Using h2 for decorative pull-quotes corrupts the document outline.</li>
-          </ul>
-
-          <h2 id="sem-landmarks">Landmark elements</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Element</th>
-                  <th>ARIA Role</th>
-                  <th>Usage</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><code>&lt;header&gt;</code></td>
-                  <td><code>banner</code> (when top-level)</td>
-                  <td>Site-wide header containing logo and primary navigation. Only one <code>banner</code> landmark per page.</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;nav&gt;</code></td>
-                  <td><code>navigation</code></td>
-                  <td>Navigation landmark. Use <code>aria-label</code> to distinguish multiple nav elements (e.g., "Primary", "Documentation", "Breadcrumb").</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;main&gt;</code></td>
-                  <td><code>main</code></td>
-                  <td>Primary content of the page. Only one per page. Screen readers provide a skip link to this landmark.</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;aside&gt;</code></td>
-                  <td><code>complementary</code></td>
-                  <td>Content tangentially related to the main content (table of contents, related links, ads). Use <code>aria-label</code> to describe its purpose.</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;footer&gt;</code></td>
-                  <td><code>contentinfo</code> (when top-level)</td>
-                  <td>Site-wide footer with copyright, legal links, and secondary navigation.</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;article&gt;</code></td>
-                  <td><code>article</code></td>
-                  <td>Self-contained, independently distributable content. Use for blog posts, documentation pages, news articles, and comments.</td>
-                </tr>
-                <tr>
-                  <td><code>&lt;section&gt;</code></td>
-                  <td><code>region</code> (when labelled)</td>
-                  <td>Thematic grouping within a page that would not make sense in isolation. Always provide a heading or <code>aria-label</code>.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-
-          <h2 id="sem-microdata">Microdata inline markup</h2>
-          <p>While JSON-LD is preferred for most structured data, microdata can reinforce schema markup inline when the structured content is already present in the HTML. Microdata attributes — <code>itemscope</code>, <code>itemtype</code>, <code>itemprop</code> — annotate existing visible elements without duplicating data in a separate script block.</p>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">Article with microdata</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="sem-microdata">Copy</button>
-              </div>
             </div>
-            <pre id="sem-microdata"><code><span class="p">&lt;</span><span class="t">article</span>
+
+            <h2 id="sem-headings">Heading hierarchy</h2>
+            <p>
+              Headings create the document outline that search engines use to
+              understand content structure. Follow these rules on every page:
+            </p>
+            <ul>
+              <li>
+                <strong>One h1 per page.</strong> The h1 topic must align with
+                the <code>&lt;title&gt;</code> tag. It is the primary signal for
+                the page's core topic.
+              </li>
+              <li>
+                <strong>h2 for major sections.</strong> Each h2 introduces a
+                top-level topic that supports the h1. All h2s on this page
+                (Document structure, Heading hierarchy, Landmark elements,
+                Microdata) are direct subtopics of "Semantic HTML for SEO".
+              </li>
+              <li>
+                <strong>h3 for subsections.</strong> Use h3 inside an h2 section
+                for further subdivision. Never skip levels - jumping from h2 to
+                h4 breaks the document outline.
+              </li>
+              <li>
+                <strong>Never use headings for visual styling.</strong> If you
+                need large bold text that is not a structural heading, use CSS
+                on a <code>&lt;p&gt;</code> or <code>&lt;span&gt;</code>. Using
+                h2 for decorative pull-quotes corrupts the document outline.
+              </li>
+            </ul>
+
+            <h2 id="sem-landmarks">Landmark elements</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Element</th>
+                    <th>ARIA Role</th>
+                    <th>Usage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>&lt;header&gt;</code></td>
+                    <td><code>banner</code> (when top-level)</td>
+                    <td>
+                      Site-wide header containing logo and primary navigation.
+                      Only one <code>banner</code> landmark per page.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;nav&gt;</code></td>
+                    <td><code>navigation</code></td>
+                    <td>
+                      Navigation landmark. Use <code>aria-label</code> to
+                      distinguish multiple nav elements (e.g., "Primary",
+                      "Documentation", "Breadcrumb").
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;main&gt;</code></td>
+                    <td><code>main</code></td>
+                    <td>
+                      Primary content of the page. Only one per page. Screen
+                      readers provide a skip link to this landmark.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;aside&gt;</code></td>
+                    <td><code>complementary</code></td>
+                    <td>
+                      Content tangentially related to the main content (table of
+                      contents, related links, ads). Use
+                      <code>aria-label</code> to describe its purpose.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;footer&gt;</code></td>
+                    <td><code>contentinfo</code> (when top-level)</td>
+                    <td>
+                      Site-wide footer with copyright, legal links, and
+                      secondary navigation.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;article&gt;</code></td>
+                    <td><code>article</code></td>
+                    <td>
+                      Self-contained, independently distributable content. Use
+                      for blog posts, documentation pages, news articles, and
+                      comments.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><code>&lt;section&gt;</code></td>
+                    <td><code>region</code> (when labelled)</td>
+                    <td>
+                      Thematic grouping within a page that would not make sense
+                      in isolation. Always provide a heading or
+                      <code>aria-label</code>.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h2 id="sem-microdata">Microdata inline markup</h2>
+            <p>
+              While JSON-LD is preferred for most structured data, microdata can
+              reinforce schema markup inline when the structured content is
+              already present in the HTML. Microdata attributes -
+              <code>itemscope</code>, <code>itemtype</code>,
+              <code>itemprop</code> - annotate existing visible elements without
+              duplicating data in a separate script block.
+            </p>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename">Article with microdata</span>
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="sem-microdata">
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <pre
+                id="sem-microdata"
+              ><code><span class="p">&lt;</span><span class="t">article</span>
   <span class="a">itemscope</span>
   <span class="a">itemtype</span><span class="p">=</span><span class="s">"https://schema.org/TechArticle"</span>
 <span class="p">&gt;</span>
@@ -347,30 +548,28 @@
     <span class="c">&lt;!-- Article content --&gt;</span>
   <span class="p">&lt;/</span><span class="t">div</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="t">article</span><span class="p">&gt;</span></code></pre>
-          </div>
+            </div>
 
-          <div class="page-nav">
-            <a class="page-nav-item" href="performance-seo.html">
-              <div class="page-nav-label">&#8592; Previous</div>
-              <div class="page-nav-title">Performance SEO</div>
-            </a>
-            <a class="page-nav-item next" href="internal-linking.html">
-              <div class="page-nav-label">Next &#8594;</div>
-              <div class="page-nav-title">Internal Linking</div>
-            </a>
-          </div>
-        </article>
+            <div class="page-nav">
+              <a class="page-nav-item" href="performance-seo.html">
+                <div class="page-nav-label">&#8592; Previous</div>
+                <div class="page-nav-title">Performance SEO</div>
+              </a>
+              <a class="page-nav-item next" href="internal-linking.html">
+                <div class="page-nav-label">Next &#8594;</div>
+                <div class="page-nav-title">Internal Linking</div>
+              </a>
+            </div>
+          </article>
+        </div>
+      </main>
 
-      </div>
-    </main>
+      <aside class="toc" aria-label="On this page">
+        <div class="toc-title">On this page</div>
+        <div id="toc-content"></div>
+      </aside>
+    </div>
 
-    <aside class="toc" aria-label="On this page">
-      <div class="toc-title">On this page</div>
-      <div id="toc-content"></div>
-    </aside>
-
-  </div>
-
-  <script src="../assets/js/seo.js" defer></script>
-</body>
+    <script src="../assets/js/seo.js" defer></script>
+  </body>
 </html>

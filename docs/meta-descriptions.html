@@ -1,255 +1,410 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="dark">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meta Descriptions — SEO Reference</title>
-  <meta name="description" content="How to write effective meta descriptions for higher click-through rates. Covers character limits, action-oriented language, keyword inclusion, and avoiding duplicate descriptions." />
-  <link rel="canonical" href="https://kb-rc.github.io/SEO-For-Developers/docs/meta-descriptions.html" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../assets/logo.avif" type="image/avif">
+    <title>Meta Descriptions - SEO Reference</title>
+    <meta
+      name="description"
+      content="How to write effective meta descriptions for higher click-through rates. Covers character limits, action-oriented language, keyword inclusion, and avoiding duplicate descriptions."
+    />
+    <link
+      rel="canonical"
+      href="https://kb-rc.github.io/SEO-For-Developers/docs/meta-descriptions.html"
+    />
 
-  <!-- Open Graph -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:url"         content="https://kb-rc.github.io/SEO-For-Developers/docs/meta-descriptions.html" />
-  <meta property="og:title"       content="Meta Descriptions — SEO Reference" />
-  <meta property="og:description" content="How to write effective meta descriptions for higher click-through rates. Covers character limits, action-oriented language, keyword inclusion, and avoiding duplicate descriptions." />
-  <meta property="og:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
-  <meta property="og:image:width"  content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:site_name"   content="SEO Reference" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://kb-rc.github.io/SEO-For-Developers/docs/meta-descriptions.html"
+    />
+    <meta property="og:title" content="Meta Descriptions - SEO Reference" />
+    <meta
+      property="og:description"
+      content="How to write effective meta descriptions for higher click-through rates. Covers character limits, action-oriented language, keyword inclusion, and avoiding duplicate descriptions."
+    />
+    <meta
+      property="og:image"
+      content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="SEO For Developers" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:site"        content="@seodocsdev" />
-  <meta name="twitter:title"       content="Meta Descriptions — SEO Reference" />
-  <meta name="twitter:description" content="How to write effective meta descriptions for higher click-through rates. Covers character limits, action-oriented language, keyword inclusion, and avoiding duplicate descriptions." />
-  <meta name="twitter:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@seodocsdev" />
+    <meta name="twitter:title" content="Meta Descriptions - SEO Reference" />
+    <meta
+      name="twitter:description"
+      content="How to write effective meta descriptions for higher click-through rates. Covers character limits, action-oriented language, keyword inclusion, and avoiding duplicate descriptions."
+    />
+    <meta
+      name="twitter:image"
+      content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png"
+    />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <!-- JSON-LD: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
-    "name": "SEO Reference",
-    "url": "https://kb-rc.github.io/SEO-For-Developers/",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
-      "width": 512,
-      "height": 512
-    }
-  }
-  </script>
-
-  <!-- JSON-LD: Person / E-E-A-T -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
-    "name": "SEO Reference",
-    "url": "https://kb-rc.github.io/SEO-For-Developers/",
-    "jobTitle": "Technical SEO Documentation",
-    "knowsAbout": ["Technical SEO", "Structured Data", "Core Web Vitals", "JavaScript SEO", "Crawling and Indexing"]
-  }
-  </script>
-
-  <!-- JSON-LD: BreadcrumbList -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kb-rc.github.io/SEO-For-Developers/" },
-      { "@type": "ListItem", "position": 2, "name": "Meta Descriptions", "item": "https://kb-rc.github.io/SEO-For-Developers/docs/meta-descriptions.html" }
-    ]
-  }
-  </script>
-
-  <!-- JSON-LD: FAQPage -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
+    <!-- JSON-LD: Organization -->
+    <script type="application/ld+json">
       {
-        "@type": "Question",
-        "name": "What is the ideal length for a meta description?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "120–158 characters. Google truncates descriptions at approximately 920px, which is around 158 characters on desktop."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Does the meta description directly affect search rankings?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Google's documentation confirms the meta description is not a ranking factor. However, it affects click-through rate (CTR) — a secondary ranking signal. Google bolds matching search terms in the snippet."
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
+        "name": "SEO For Developers",
+        "url": "https://kb-rc.github.io/SEO-For-Developers/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
+          "width": 512,
+          "height": 512
         }
       }
-    ]
-  }
-  </script>
-</head>
+    </script>
 
-<body data-page="meta-descriptions">
+    <!-- JSON-LD: Person / E-E-A-T -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
+        "name": "Kishore Babu",
+        "url": "https://kb-rc.github.io/SEO-For-Developers/",
+        "jobTitle": "Technical SEO Documentation",
+        "knowsAbout": [
+          "Technical SEO",
+          "Structured Data",
+          "Core Web Vitals",
+          "JavaScript SEO",
+          "Crawling and Indexing"
+        ]
+      }
+    </script>
 
-  <header class="header" role="banner">
-    <div class="header-logo">
-      <a href="../index.html">
-        <div class="logo-icon">
-          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM11.5 9.5l2 4-2 .5-1-2.5-1 2.5-2-.5z"/>
+    <!-- JSON-LD: BreadcrumbList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://kb-rc.github.io/SEO-For-Developers/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Meta Descriptions",
+            "item": "https://kb-rc.github.io/SEO-For-Developers/docs/meta-descriptions.html"
+          }
+        ]
+      }
+    </script>
+
+    <!-- JSON-LD: FAQPage -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the ideal length for a meta description?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "120–158 characters. Google truncates descriptions at approximately 920px, which is around 158 characters on desktop."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does the meta description directly affect search rankings?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Google's documentation confirms the meta description is not a ranking factor. However, it affects click-through rate (CTR) - a secondary ranking signal. Google bolds matching search terms in the snippet."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body data-page="meta-descriptions">
+    <header class="header" role="banner">
+      <div class="header-logo">
+        <a href="../index.html">
+          <div class="logo-icon"><img src="../assets/logo.avif" alt="SEO For Developers" width="24" height="24"></div>
+          <span class="logo-text">SEO<span> For Developers</span></span>
+        </a>
+      </div>
+      <div class="header-actions">
+        <button
+          class="btn-icon mobile-menu-btn"
+          id="mobile-menu-btn"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <svg
+            viewBox="0 0 16 16"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M1 3h14M1 8h14M1 13h14" />
           </svg>
+        </button>
+        <button
+          class="btn-icon"
+          id="theme-toggle"
+          title="Toggle theme"
+          aria-label="Toggle color theme"
+        >
+          <svg
+            id="icon-sun"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            style="display: none"
+            aria-hidden="true"
+          >
+            <path
+              d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+            />
+          </svg>
+          <svg
+            id="icon-moon"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+            />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <nav
+        class="sidebar"
+        id="sidebar"
+        role="navigation"
+        aria-label="Documentation"
+      >
+        <div class="nav-group">
+          <div class="nav-group-label">Getting Started</div>
+          <a class="nav-link" data-page="intro" href="../index.html"
+            ><span class="dot"></span>Introduction</a
+          >
         </div>
-        <span class="logo-text">SEO<span>Ref</span></span>
-      </a>
-    </div>
-    <nav class="header-nav" role="navigation" aria-label="Primary">
-      <div class="header-search" role="search" aria-label="Site search">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5l3 3"/>
-        </svg>
-        Search docs&hellip;
-        <kbd>&#8984;K</kbd>
-      </div>
-    </nav>
-    <div class="header-actions">
-      <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-          <path d="M1 3h14M1 8h14M1 13h14"/>
-        </svg>
-      </button>
-      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">
-        <svg id="icon-sun" viewBox="0 0 16 16" fill="currentColor" style="display:none" aria-hidden="true">
-          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-        </svg>
-        <svg id="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        </svg>
-      </button>
-    </div>
-  </header>
+        <div class="nav-group">
+          <div class="nav-group-label">On-Page Tags</div>
+          <a class="nav-link" data-page="title-tags" href="title-tags.html"
+            ><span class="dot"></span>Title Tags</a
+          >
+          <a
+            class="nav-link"
+            data-page="meta-descriptions"
+            href="meta-descriptions.html"
+            ><span class="dot"></span>Meta Descriptions</a
+          >
+          <a class="nav-link" data-page="open-graph" href="open-graph.html"
+            ><span class="dot"></span>Open Graph / Social</a
+          >
+          <a
+            class="nav-link"
+            data-page="canonical-tags"
+            href="canonical-tags.html"
+            ><span class="dot"></span>Canonical Tags</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Crawling &amp; Indexing</div>
+          <a class="nav-link" data-page="robots-txt" href="robots-txt.html"
+            ><span class="dot"></span>robots.txt</a
+          >
+          <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"
+            ><span class="dot"></span>sitemap.xml</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Structured Data</div>
+          <a class="nav-link" data-page="json-ld" href="json-ld.html"
+            ><span class="dot"></span>JSON-LD Basics</a
+          >
+          <a class="nav-link" data-page="faq-schema" href="faq-schema.html"
+            ><span class="dot"></span>FAQ Schema</a
+          >
+          <a
+            class="nav-link"
+            data-page="organization-schema"
+            href="organization-schema.html"
+            ><span class="dot"></span>Organization Schema</a
+          >
+          <a class="nav-link" data-page="author-eeat" href="author-eeat.html"
+            ><span class="dot"></span>Author / E-E-A-T Schema</a
+          >
+          <a
+            class="nav-link"
+            data-page="breadcrumb-schema"
+            href="breadcrumb-schema.html"
+            ><span class="dot"></span>Breadcrumb Schema</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Content &amp; Performance</div>
+          <a class="nav-link" data-page="image-seo" href="image-seo.html"
+            ><span class="dot"></span>Image SEO</a
+          >
+          <a
+            class="nav-link"
+            data-page="performance-seo"
+            href="performance-seo.html"
+            ><span class="dot"></span>Performance SEO</a
+          >
+          <a
+            class="nav-link"
+            data-page="semantic-html"
+            href="semantic-html.html"
+            ><span class="dot"></span>Semantic HTML</a
+          >
+        </div>
+        <div class="nav-group">
+          <div class="nav-group-label">Architecture</div>
+          <a
+            class="nav-link"
+            data-page="internal-linking"
+            href="internal-linking.html"
+            ><span class="dot"></span>Internal Linking</a
+          >
+          <a
+            class="nav-link"
+            data-page="url-structure"
+            href="url-structure.html"
+            ><span class="dot"></span>URL Structure</a
+          >
+        </div>
+      </nav>
+      <div class="sidebar-overlay" id="sidebar-overlay"></div>
 
-  <div class="layout">
+      <main class="main" role="main" id="main-content">
+        <div class="content">
+          <article aria-labelledby="meta-desc-h1">
+            <h1 id="meta-desc-h1">Meta Descriptions</h1>
 
-    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Documentation">
-      <div class="nav-group">
-        <div class="nav-group-label">Getting Started</div>
-        <a class="nav-link" data-page="intro" href="../index.html"><span class="dot"></span>Introduction</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">On-Page Tags</div>
-        <a class="nav-link" data-page="title-tags" href="title-tags.html"><span class="dot"></span>Title Tags</a>
-        <a class="nav-link" data-page="meta-descriptions" href="meta-descriptions.html"><span class="dot"></span>Meta Descriptions</a>
-        <a class="nav-link" data-page="open-graph" href="open-graph.html"><span class="dot"></span>Open Graph / Social</a>
-        <a class="nav-link" data-page="canonical-tags" href="canonical-tags.html"><span class="dot"></span>Canonical Tags</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Crawling &amp; Indexing</div>
-        <a class="nav-link" data-page="robots-txt" href="robots-txt.html"><span class="dot"></span>robots.txt</a>
-        <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"><span class="dot"></span>sitemap.xml</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Structured Data</div>
-        <a class="nav-link" data-page="json-ld" href="json-ld.html"><span class="dot"></span>JSON-LD Basics</a>
-        <a class="nav-link" data-page="faq-schema" href="faq-schema.html"><span class="dot"></span>FAQ Schema</a>
-        <a class="nav-link" data-page="organization-schema" href="organization-schema.html"><span class="dot"></span>Organization Schema</a>
-        <a class="nav-link" data-page="author-eeat" href="author-eeat.html"><span class="dot"></span>Author / E-E-A-T Schema</a>
-        <a class="nav-link" data-page="breadcrumb-schema" href="breadcrumb-schema.html"><span class="dot"></span>Breadcrumb Schema</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Content &amp; Performance</div>
-        <a class="nav-link" data-page="image-seo" href="image-seo.html"><span class="dot"></span>Image SEO</a>
-        <a class="nav-link" data-page="performance-seo" href="performance-seo.html"><span class="dot"></span>Performance SEO</a>
-        <a class="nav-link" data-page="semantic-html" href="semantic-html.html"><span class="dot"></span>Semantic HTML</a>
-      </div>
-      <div class="nav-group">
-        <div class="nav-group-label">Architecture</div>
-        <a class="nav-link" data-page="internal-linking" href="internal-linking.html"><span class="dot"></span>Internal Linking</a>
-        <a class="nav-link" data-page="url-structure" href="url-structure.html"><span class="dot"></span>URL Structure</a>
-      </div>
-    </nav>
-    <div class="sidebar-overlay" id="sidebar-overlay"></div>
-
-    <main class="main" role="main" id="main-content">
-      <div class="content">
-
-        <article aria-labelledby="meta-desc-h1">
-          <h1 id="meta-desc-h1">Meta Descriptions</h1>
-
-          <div class="def-box">
-            <span class="callout-icon"></span>
-            <div>The <code>description</code> meta tag provides a summary shown in SERPs below the title. It does not directly influence ranking, but affects click-through rate (CTR) — a secondary ranking signal.</div>
-          </div>
-
-          <h2 id="meta-rules">Rules</h2>
-          <ul>
-            <li><strong>Length: 120–158 characters.</strong> Google truncates descriptions at approximately 920px display width, which corresponds to roughly 158 characters on desktop and fewer on mobile. Aim for 120–158 characters to maximize visible content without truncation.</li>
-            <li><strong>Action-oriented language.</strong> Begin with a verb or value proposition: "Learn how to…", "Discover the exact…", "A complete reference for…". This increases click intent by making the benefit immediately clear.</li>
-            <li><strong>Include the primary keyword naturally.</strong> Google bolds terms in the snippet that match the user's search query. Naturally including the keyword increases visual prominence in SERPs.</li>
-            <li><strong>Unique per page.</strong> Duplicate meta descriptions across multiple pages are flagged in Google Search Console and deprive each page of its opportunity to attract the right audience segment.</li>
-          </ul>
-
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">index.html</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="meta-index">Copy</button>
+            <div class="def-box">
+              <span class="callout-icon"></span>
+              <div>
+                The <code>description</code> meta tag provides a summary shown
+                in SERPs below the title. It does not directly influence
+                ranking, but affects click-through rate (CTR) - a secondary
+                ranking signal.
               </div>
             </div>
-            <pre id="meta-index"><code><span class="p">&lt;</span><span class="t">meta</span> <span class="a">name</span>=<span class="s">"description"</span>
-      <span class="a">content</span>=<span class="s">"A complete technical SEO reference for developers. Covers title tags, meta descriptions, structured data, sitemaps, robots.txt, canonical URLs, Core Web Vitals, and more — with real file examples."</span> <span class="p">/&gt;</span></code></pre>
-          </div>
 
-          <div class="code-block">
-            <div class="code-header">
-              <span class="code-filename">docs/title-tags.html</span>
-              <div class="code-actions">
-                <span class="code-lang">HTML</span>
-                <button class="copy-btn" data-copy="meta-title-page">Copy</button>
+            <h2 id="meta-rules">Rules</h2>
+            <ul>
+              <li>
+                <strong>Length: 120–158 characters.</strong> Google truncates
+                descriptions at approximately 920px display width, which
+                corresponds to roughly 158 characters on desktop and fewer on
+                mobile. Aim for 120–158 characters to maximize visible content
+                without truncation.
+              </li>
+              <li>
+                <strong>Action-oriented language.</strong> Begin with a verb or
+                value proposition: "Learn how to…", "Discover the exact…", "A
+                complete reference for…". This increases click intent by making
+                the benefit immediately clear.
+              </li>
+              <li>
+                <strong>Include the primary keyword naturally.</strong> Google
+                bolds terms in the snippet that match the user's search query.
+                Naturally including the keyword increases visual prominence in
+                SERPs.
+              </li>
+              <li>
+                <strong>Unique per page.</strong> Duplicate meta descriptions
+                across multiple pages are flagged in Google Search Console and
+                deprive each page of its opportunity to attract the right
+                audience segment.
+              </li>
+            </ul>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename">index.html</span>
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="meta-index">Copy</button>
+                </div>
               </div>
+              <pre
+                id="meta-index"
+              ><code><span class="p">&lt;</span><span class="t">meta</span> <span class="a">name</span>=<span class="s">"description"</span>
+      <span class="a">content</span>=<span class="s">"A complete technical SEO reference for developers. Covers title tags, meta descriptions, structured data, sitemaps, robots.txt, canonical URLs, Core Web Vitals, and more - with real file examples."</span> <span class="p">/&gt;</span></code></pre>
             </div>
-            <pre id="meta-title-page"><code><span class="p">&lt;</span><span class="t">meta</span> <span class="a">name</span>=<span class="s">"description"</span>
+
+            <div class="code-block">
+              <div class="code-header">
+                <span class="code-filename">docs/title-tags.html</span>
+                <div class="code-actions">
+                  <span class="code-lang">HTML</span>
+                  <button class="copy-btn" data-copy="meta-title-page">
+                    Copy
+                  </button>
+                </div>
+              </div>
+              <pre
+                id="meta-title-page"
+              ><code><span class="p">&lt;</span><span class="t">meta</span> <span class="a">name</span>=<span class="s">"description"</span>
       <span class="a">content</span>=<span class="s">"How to write effective HTML title tags for SEO. Covers length limits, keyword placement, brand suffix, dynamic titles via JavaScript, and common anti-patterns to avoid."</span> <span class="p">/&gt;</span></code></pre>
-          </div>
+            </div>
 
-          <div class="callout info">
-            <span class="callout-icon"></span>
-            <div>Google rewrites descriptions approximately 62% of the time. Even so, writing a strong description sets the baseline and controls the narrative when Google does not rewrite it. It is also used verbatim by other search engines and social scrapers that do not rewrite snippets.</div>
-          </div>
+            <div class="callout info">
+              <span class="callout-icon"></span>
+              <div>
+                Google rewrites descriptions approximately 62% of the time. Even
+                so, writing a strong description sets the baseline and controls
+                the narrative when Google does not rewrite it. It is also used
+                verbatim by other search engines and social scrapers that do not
+                rewrite snippets.
+              </div>
+            </div>
 
-          <div class="page-nav">
-            <a class="page-nav-item" href="title-tags.html">
-              <div class="page-nav-label">&#8592; Previous</div>
-              <div class="page-nav-title">Title Tags</div>
-            </a>
-            <a class="page-nav-item next" href="open-graph.html">
-              <div class="page-nav-label">Next &#8594;</div>
-              <div class="page-nav-title">Open Graph / Social</div>
-            </a>
-          </div>
-        </article>
+            <div class="page-nav">
+              <a class="page-nav-item" href="title-tags.html">
+                <div class="page-nav-label">&#8592; Previous</div>
+                <div class="page-nav-title">Title Tags</div>
+              </a>
+              <a class="page-nav-item next" href="open-graph.html">
+                <div class="page-nav-label">Next &#8594;</div>
+                <div class="page-nav-title">Open Graph / Social</div>
+              </a>
+            </div>
+          </article>
+        </div>
+      </main>
 
-      </div>
-    </main>
+      <aside class="toc" aria-label="On this page">
+        <div class="toc-title">On this page</div>
+        <div id="toc-content"></div>
+      </aside>
+    </div>
 
-    <aside class="toc" aria-label="On this page">
-      <div class="toc-title">On this page</div>
-      <div id="toc-content"></div>
-    </aside>
-
-  </div>
-
-  <script src="../assets/js/seo.js" defer></script>
-</body>
+    <script src="../assets/js/seo.js" defer></script>
+  </body>
 </html>
