@@ -922,7 +922,7 @@ tr:last-child td {
   align-items: center;
   justify-content: center;
   font-family: var(--font-mono);
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   color: var(--accent);
   margin-bottom: 10px;
