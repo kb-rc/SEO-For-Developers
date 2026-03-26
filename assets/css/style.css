@@ -144,23 +144,6 @@ a:hover {
   width: 100%;
 }
 
-.logo-icon {
-  width: 28px;
-  height: 28px;
-  background: var(--accent);
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.logo-icon svg {
-  width: 16px;
-  height: 16px;
-  fill: white;
-}
-
 .logo-text {
   font-family: var(--font-display);
   font-size: 15px;
@@ -932,8 +915,6 @@ tr:last-child td {
 }
 
 .topic-card-icon {
-  width: 28px;
-  height: 28px;
   background: var(--accent-soft);
   border: 1px solid var(--accent-border);
   border-radius: 5px;
