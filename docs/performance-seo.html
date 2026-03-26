@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Performance SEO — Core Web Vitals &amp; Page Speed — SEO Reference</title>
+  <meta name="description" content="How to improve Core Web Vitals for SEO. Covers LCP preloading, CLS prevention, script defer/async strategies, and font display techniques used on this site." />
+  <link rel="canonical" href="https://kb-rc.github.io/SEO-For-Developers/docs/performance-seo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://kb-rc.github.io/SEO-For-Developers/docs/performance-seo.html" />
+  <meta property="og:title"       content="Performance SEO — Core Web Vitals &amp; Page Speed — SEO Reference" />
+  <meta property="og:description" content="How to improve Core Web Vitals for SEO. Covers LCP preloading, CLS prevention, script defer/async strategies, and font display techniques used on this site." />
+  <meta property="og:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="SEO Reference" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@seodocsdev" />
+  <meta name="twitter:title"       content="Performance SEO — Core Web Vitals &amp; Page Speed — SEO Reference" />
+  <meta name="twitter:description" content="How to improve Core Web Vitals for SEO. Covers LCP preloading, CLS prevention, script defer/async strategies, and font display techniques used on this site." />
+  <meta name="twitter:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
+    "name": "SEO Reference",
+    "url": "https://kb-rc.github.io/SEO-For-Developers/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
+      "width": 512,
+      "height": 512
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Person / E-E-A-T -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
+    "name": "SEO Reference",
+    "url": "https://kb-rc.github.io/SEO-For-Developers/",
+    "jobTitle": "Technical SEO Documentation",
+    "knowsAbout": ["Technical SEO", "Structured Data", "Core Web Vitals", "JavaScript SEO", "Crawling and Indexing"]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kb-rc.github.io/SEO-For-Developers/" },
+      { "@type": "ListItem", "position": 2, "name": "Performance SEO", "item": "https://kb-rc.github.io/SEO-For-Developers/docs/performance-seo.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What are Core Web Vitals?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Core Web Vitals are three metrics Google uses as ranking signals: LCP (Largest Contentful Paint) measures loading performance, CLS (Cumulative Layout Shift) measures visual stability, and INP (Interaction to Next Paint) measures responsiveness. Good thresholds: LCP under 2.5s, CLS under 0.1, INP under 200ms."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What causes Cumulative Layout Shift (CLS)?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Common causes include images without explicit width/height attributes, web fonts causing FOUT (flash of unstyled text), dynamically injected content above existing content, and ads/embeds without reserved container dimensions."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body data-page="performance-seo">
+
+  <header class="header" role="banner">
+    <div class="header-logo">
+      <a href="../index.html">
+        <div class="logo-icon">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM11.5 9.5l2 4-2 .5-1-2.5-1 2.5-2-.5z"/>
+          </svg>
+        </div>
+        <span class="logo-text">SEO<span>Ref</span></span>
+      </a>
+    </div>
+    <nav class="header-nav" role="navigation" aria-label="Primary">
+      <div class="header-search" role="search" aria-label="Site search">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5l3 3"/>
+        </svg>
+        Search docs&hellip;
+        <kbd>&#8984;K</kbd>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M1 3h14M1 8h14M1 13h14"/>
+        </svg>
+      </button>
+      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">
+        <svg id="icon-sun" viewBox="0 0 16 16" fill="currentColor" style="display:none" aria-hidden="true">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        <svg id="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Documentation">
+      <div class="nav-group">
+        <div class="nav-group-label">Getting Started</div>
+        <a class="nav-link" data-page="intro" href="../index.html"><span class="dot"></span>Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">On-Page Tags</div>
+        <a class="nav-link" data-page="title-tags" href="title-tags.html"><span class="dot"></span>Title Tags</a>
+        <a class="nav-link" data-page="meta-descriptions" href="meta-descriptions.html"><span class="dot"></span>Meta Descriptions</a>
+        <a class="nav-link" data-page="open-graph" href="open-graph.html"><span class="dot"></span>Open Graph / Social</a>
+        <a class="nav-link" data-page="canonical-tags" href="canonical-tags.html"><span class="dot"></span>Canonical Tags</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Crawling &amp; Indexing</div>
+        <a class="nav-link" data-page="robots-txt" href="robots-txt.html"><span class="dot"></span>robots.txt</a>
+        <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"><span class="dot"></span>sitemap.xml</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Structured Data</div>
+        <a class="nav-link" data-page="json-ld" href="json-ld.html"><span class="dot"></span>JSON-LD Basics</a>
+        <a class="nav-link" data-page="faq-schema" href="faq-schema.html"><span class="dot"></span>FAQ Schema</a>
+        <a class="nav-link" data-page="organization-schema" href="organization-schema.html"><span class="dot"></span>Organization Schema</a>
+        <a class="nav-link" data-page="author-eeat" href="author-eeat.html"><span class="dot"></span>Author / E-E-A-T Schema</a>
+        <a class="nav-link" data-page="breadcrumb-schema" href="breadcrumb-schema.html"><span class="dot"></span>Breadcrumb Schema</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Content &amp; Performance</div>
+        <a class="nav-link" data-page="image-seo" href="image-seo.html"><span class="dot"></span>Image SEO</a>
+        <a class="nav-link" data-page="performance-seo" href="performance-seo.html"><span class="dot"></span>Performance SEO</a>
+        <a class="nav-link" data-page="semantic-html" href="semantic-html.html"><span class="dot"></span>Semantic HTML</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Architecture</div>
+        <a class="nav-link" data-page="internal-linking" href="internal-linking.html"><span class="dot"></span>Internal Linking</a>
+        <a class="nav-link" data-page="url-structure" href="url-structure.html"><span class="dot"></span>URL Structure</a>
+      </div>
+    </nav>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <main class="main" role="main" id="main-content">
+      <div class="content">
+
+        <article aria-labelledby="perf-seo-h1">
+          <h1 id="perf-seo-h1">Performance SEO</h1>
+
+          <div class="def-box">
+            <span class="callout-icon"></span>
+            <div>Core Web Vitals (LCP, CLS, INP) are direct ranking signals since 2021. Good thresholds: LCP under 2.5s, CLS under 0.1, INP under 200ms. Performance optimisation is therefore both a user experience requirement and an SEO requirement.</div>
+          </div>
+
+          <h2 id="perf-preload">Resource preloading</h2>
+          <p>Preconnect and preload hints reduce the critical-path latency for resources the browser will need. Preconnect establishes early TCP/TLS connections to external origins. Preload fetches high-priority resources — fonts, critical CSS, LCP images — before the parser would normally discover them.</p>
+          <p>The following is the resource hint pattern used in the <code>&lt;head&gt;</code> of every page on this site:</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-filename">index.html — resource hints</span>
+              <div class="code-actions">
+                <span class="code-lang">HTML</span>
+                <button class="copy-btn" data-copy="perf-preload">Copy</button>
+              </div>
+            </div>
+            <pre id="perf-preload"><code><span class="c">&lt;!-- 1. Preconnect to font origins as early as possible --&gt;</span>
+<span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span><span class="p">=</span><span class="s">"preconnect"</span> <span class="a">href</span><span class="p">=</span><span class="s">"https://fonts.googleapis.com"</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span><span class="p">=</span><span class="s">"preconnect"</span> <span class="a">href</span><span class="p">=</span><span class="s">"https://fonts.gstatic.com"</span> <span class="a">crossorigin</span> <span class="p">/&gt;</span>
+
+<span class="c">&lt;!-- 2. Load font stylesheet (render-blocking, but preconnect reduces latency) --&gt;</span>
+<span class="p">&lt;</span><span class="t">link</span>
+  <span class="a">href</span><span class="p">=</span><span class="s">"https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Syne:wght@400;500;600;700&amp;family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&amp;display=swap"</span>
+  <span class="a">rel</span><span class="p">=</span><span class="s">"stylesheet"</span>
+<span class="p">/&gt;</span>
+
+<span class="c">&lt;!-- 3. Load site stylesheet --&gt;</span>
+<span class="p">&lt;</span><span class="t">link</span> <span class="a">rel</span><span class="p">=</span><span class="s">"stylesheet"</span> <span class="a">href</span><span class="p">=</span><span class="s">"assets/css/style.css"</span> <span class="p">/&gt;</span>
+
+<span class="c">&lt;!-- 4. Preload LCP image (if known at build time) --&gt;</span>
+<span class="p">&lt;</span><span class="t">link</span>
+  <span class="a">rel</span><span class="p">=</span><span class="s">"preload"</span>
+  <span class="a">as</span><span class="p">=</span><span class="s">"image"</span>
+  <span class="a">href</span><span class="p">=</span><span class="s">"assets/images/hero-1200w.avif"</span>
+  <span class="a">imagesrcset</span><span class="p">=</span><span class="s">"assets/images/hero-480w.avif 480w, assets/images/hero-800w.avif 800w, assets/images/hero-1200w.avif 1200w"</span>
+  <span class="a">imagesizes</span><span class="p">=</span><span class="s">"(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"</span>
+  <span class="a">fetchpriority</span><span class="p">=</span><span class="s">"high"</span>
+<span class="p">/&gt;</span></code></pre>
+          </div>
+
+          <h2 id="perf-defer">Script loading strategies</h2>
+          <p>JavaScript blocks HTML parsing when loaded synchronously. Use <code>defer</code>, <code>async</code>, or <code>type="module"</code> to prevent render-blocking scripts. The <code>assets/js/seo.js</code> file on this site uses <code>defer</code>, which executes after HTML parsing completes but before <code>DOMContentLoaded</code>, preserving execution order.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-filename">Script loading comparison</span>
+              <div class="code-actions">
+                <span class="code-lang">HTML</span>
+                <button class="copy-btn" data-copy="perf-scripts">Copy</button>
+              </div>
+            </div>
+            <pre id="perf-scripts"><code><span class="c">&lt;!-- Render-blocking: avoid for non-critical scripts --&gt;</span>
+<span class="p">&lt;</span><span class="t">script</span> <span class="a">src</span><span class="p">=</span><span class="s">"script.js"</span><span class="p">&gt;&lt;/</span><span class="t">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- defer: parses in parallel, executes after HTML parsed, in order --&gt;</span>
+<span class="c">&lt;!-- Best for scripts that depend on the DOM and need to run in order --&gt;</span>
+<span class="p">&lt;</span><span class="t">script</span> <span class="a">src</span><span class="p">=</span><span class="s">"assets/js/seo.js"</span> <span class="a">defer</span><span class="p">&gt;&lt;/</span><span class="t">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- async: fetches in parallel, executes immediately when ready --&gt;</span>
+<span class="c">&lt;!-- Best for independent scripts like analytics that do not need order --&gt;</span>
+<span class="p">&lt;</span><span class="t">script</span> <span class="a">src</span><span class="p">=</span><span class="s">"analytics.js"</span> <span class="a">async</span><span class="p">&gt;&lt;/</span><span class="t">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- type="module": deferred by default, strict mode, supports import/export --&gt;</span>
+<span class="p">&lt;</span><span class="t">script</span> <span class="a">type</span><span class="p">=</span><span class="s">"module"</span> <span class="a">src</span><span class="p">=</span><span class="s">"app.js"</span><span class="p">&gt;&lt;/</span><span class="t">script</span><span class="p">&gt;</span>
+
+<span class="c">&lt;!-- Inline critical script: use sparingly, only for truly critical logic --&gt;</span>
+<span class="p">&lt;</span><span class="t">script</span><span class="p">&gt;</span>
+  <span class="c">// Theme initialisation must run before first paint to prevent flash</span>
+  <span class="kw">const</span> theme = localStorage.getItem(<span class="s">'theme'</span>) || <span class="s">'dark'</span>;
+  document.documentElement.setAttribute(<span class="s">'data-theme'</span>, theme);
+<span class="p">&lt;/</span><span class="t">script</span><span class="p">&gt;</span></code></pre>
+          </div>
+
+          <h2 id="perf-cls">Preventing CLS</h2>
+          <p>Cumulative Layout Shift measures unexpected visual instability during page load. A CLS score above 0.1 is classified as needing improvement. The most common fixable causes are images without explicit dimensions and web fonts causing a flash of unstyled text.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Cause</th>
+                  <th>Fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Images without <code>width</code> and <code>height</code> attributes</td>
+                  <td>Always declare <code>width</code> and <code>height</code> on <code>&lt;img&gt;</code>. The browser reserves the correct space before the image loads, preventing a reflow.</td>
+                </tr>
+                <tr>
+                  <td>Web fonts causing FOUT (flash of unstyled text)</td>
+                  <td>Use <code>font-display: swap</code> in <code>@font-face</code> declarations. This renders text in a fallback font immediately and swaps to the web font once loaded, avoiding invisible-text flicker.</td>
+                </tr>
+                <tr>
+                  <td>Dynamically injected banners or alerts above content</td>
+                  <td>Reserve space with a fixed-height container or use CSS <code>min-height</code> on the injection target before the content loads.</td>
+                </tr>
+                <tr>
+                  <td>Ad and embed containers without dimensions</td>
+                  <td>Set explicit <code>width</code> and <code>height</code> (or aspect-ratio) on the container element before the third-party script injects the ad or iframe.</td>
+                </tr>
+                <tr>
+                  <td>Late-loading custom fonts shifting text metrics</td>
+                  <td>Use <code>size-adjust</code> and <code>ascent-override</code> in fallback font declarations to match the metrics of the web font, minimising the layout shift on swap.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-filename">CSS — image dimensions and font-display</span>
+              <div class="code-actions">
+                <span class="code-lang">CSS</span>
+                <button class="copy-btn" data-copy="perf-cls-css">Copy</button>
+              </div>
+            </div>
+            <pre id="perf-cls-css"><code><span class="c">/* Prevent CLS from images: always reserve aspect ratio space */</span>
+<span class="t">img</span> <span class="p">{</span>
+  <span class="a">max-width</span><span class="p">:</span> <span class="n">100%</span><span class="p">;</span>
+  <span class="a">height</span><span class="p">:</span> <span class="kw">auto</span><span class="p">;</span>        <span class="c">/* preserves aspect ratio when width is constrained */</span>
+  <span class="a">display</span><span class="p">:</span> <span class="kw">block</span><span class="p">;</span>      <span class="c">/* removes inline baseline gap */</span>
+<span class="p">}</span>
+
+<span class="c">/* font-display: swap prevents invisible text during font load */</span>
+<span class="t">@font-face</span> <span class="p">{</span>
+  <span class="a">font-family</span><span class="p">:</span> <span class="s">'Syne'</span><span class="p">;</span>
+  <span class="a">font-style</span><span class="p">:</span> <span class="kw">normal</span><span class="p">;</span>
+  <span class="a">font-weight</span><span class="p">:</span> <span class="n">400</span> <span class="n">700</span><span class="p">;</span>
+  <span class="a">font-display</span><span class="p">:</span> <span class="kw">swap</span><span class="p">;</span>  <span class="c">/* render fallback immediately, swap when ready */</span>
+  <span class="a">src</span><span class="p">:</span> <span class="fn">url</span>(<span class="s">'/fonts/syne.woff2'</span>) <span class="kw">format</span>(<span class="s">'woff2'</span>)<span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* Reserve space for ad/embed containers before script injection */</span>
+<span class="t">.ad-container</span> <span class="p">{</span>
+  <span class="a">min-height</span><span class="p">:</span> <span class="n">250px</span><span class="p">;</span>
+  <span class="a">width</span><span class="p">:</span> <span class="n">100%</span><span class="p">;</span>
+<span class="p">}</span></code></pre>
+          </div>
+
+          <h2 id="perf-inp">Optimising INP (Interaction to Next Paint)</h2>
+          <p>INP replaced FID (First Input Delay) as a Core Web Vital in March 2024. It measures the full duration of all interactions — click, keypress, tap — from the moment of interaction to the next visual update. The good threshold is under 200ms.</p>
+          <p>Key techniques: break up long tasks with <code>scheduler.yield()</code> or <code>setTimeout(0)</code>, avoid synchronous layout operations in event handlers, and reduce JavaScript bundle size to minimise main-thread blocking time after load.</p>
+
+          <div class="page-nav">
+            <a class="page-nav-item" href="image-seo.html">
+              <div class="page-nav-label">&#8592; Previous</div>
+              <div class="page-nav-title">Image SEO</div>
+            </a>
+            <a class="page-nav-item next" href="semantic-html.html">
+              <div class="page-nav-label">Next &#8594;</div>
+              <div class="page-nav-title">Semantic HTML</div>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <aside class="toc" aria-label="On this page">
+      <div class="toc-title">On this page</div>
+      <div id="toc-content"></div>
+    </aside>
+
+  </div>
+
+  <script src="../assets/js/seo.js" defer></script>
+</body>
+</html>

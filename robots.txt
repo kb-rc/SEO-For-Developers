@@ -1,0 +1,23 @@
+# robots.txt — https://kb-rc.github.io/SEO-For-Developers/
+# Allow all crawlers to access the full site
+User-agent: *
+Allow: /
+
+# Block crawlers from static assets (no SEO value)
+Disallow: /assets/
+
+# Block AI training crawlers
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+# Sitemap reference
+Sitemap: https://kb-rc.github.io/SEO-For-Developers/sitemap.xml

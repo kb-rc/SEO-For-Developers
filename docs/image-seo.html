@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Image SEO — Alt Text, Formats, and Responsive Images — SEO Reference</title>
+  <meta name="description" content="How to optimise images for SEO and Core Web Vitals. Covers descriptive filenames, alt text best practices, WebP/AVIF formats, srcset responsive images, lazy loading, and fetchpriority." />
+  <link rel="canonical" href="https://kb-rc.github.io/SEO-For-Developers/docs/image-seo.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://kb-rc.github.io/SEO-For-Developers/docs/image-seo.html" />
+  <meta property="og:title"       content="Image SEO — Alt Text, Formats, and Responsive Images — SEO Reference" />
+  <meta property="og:description" content="How to optimise images for SEO and Core Web Vitals. Covers descriptive filenames, alt text best practices, WebP/AVIF formats, srcset responsive images, lazy loading, and fetchpriority." />
+  <meta property="og:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="SEO Reference" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@seodocsdev" />
+  <meta name="twitter:title"       content="Image SEO — Alt Text, Formats, and Responsive Images — SEO Reference" />
+  <meta name="twitter:description" content="How to optimise images for SEO and Core Web Vitals. Covers descriptive filenames, alt text best practices, WebP/AVIF formats, srcset responsive images, lazy loading, and fetchpriority." />
+  <meta name="twitter:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../assets/css/style.css" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
+    "name": "SEO Reference",
+    "url": "https://kb-rc.github.io/SEO-For-Developers/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
+      "width": 512,
+      "height": 512
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: Person / E-E-A-T -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": "https://kb-rc.github.io/SEO-For-Developers/#author",
+    "name": "SEO Reference",
+    "url": "https://kb-rc.github.io/SEO-For-Developers/",
+    "jobTitle": "Technical SEO Documentation",
+    "knowsAbout": ["Technical SEO", "Structured Data", "Core Web Vitals", "JavaScript SEO", "Crawling and Indexing"]
+  }
+  </script>
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kb-rc.github.io/SEO-For-Developers/" },
+      { "@type": "ListItem", "position": 2, "name": "Image SEO", "item": "https://kb-rc.github.io/SEO-For-Developers/docs/image-seo.html" }
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What should the alt text be for a decorative image?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use an empty string: alt=\"\". Do not omit the attribute entirely — a missing alt attribute is a different signal than alt=\"\". Screen readers skip images with alt=\"\", which is the correct behaviour for purely decorative content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should the LCP (hero) image use loading=lazy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The LCP image should use loading=eager (the default) and fetchpriority=high. Lazy-loading the LCP image delays the largest contentful paint, directly harming your LCP Core Web Vital score."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body data-page="image-seo">
+
+  <header class="header" role="banner">
+    <div class="header-logo">
+      <a href="../index.html">
+        <div class="logo-icon">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM11.5 9.5l2 4-2 .5-1-2.5-1 2.5-2-.5z"/>
+          </svg>
+        </div>
+        <span class="logo-text">SEO<span>Ref</span></span>
+      </a>
+    </div>
+    <nav class="header-nav" role="navigation" aria-label="Primary">
+      <div class="header-search" role="search" aria-label="Site search">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5l3 3"/>
+        </svg>
+        Search docs&hellip;
+        <kbd>&#8984;K</kbd>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M1 3h14M1 8h14M1 13h14"/>
+        </svg>
+      </button>
+      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">
+        <svg id="icon-sun" viewBox="0 0 16 16" fill="currentColor" style="display:none" aria-hidden="true">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        <svg id="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Documentation">
+      <div class="nav-group">
+        <div class="nav-group-label">Getting Started</div>
+        <a class="nav-link" data-page="intro" href="../index.html"><span class="dot"></span>Introduction</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">On-Page Tags</div>
+        <a class="nav-link" data-page="title-tags" href="title-tags.html"><span class="dot"></span>Title Tags</a>
+        <a class="nav-link" data-page="meta-descriptions" href="meta-descriptions.html"><span class="dot"></span>Meta Descriptions</a>
+        <a class="nav-link" data-page="open-graph" href="open-graph.html"><span class="dot"></span>Open Graph / Social</a>
+        <a class="nav-link" data-page="canonical-tags" href="canonical-tags.html"><span class="dot"></span>Canonical Tags</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Crawling &amp; Indexing</div>
+        <a class="nav-link" data-page="robots-txt" href="robots-txt.html"><span class="dot"></span>robots.txt</a>
+        <a class="nav-link" data-page="sitemap-xml" href="sitemap-xml.html"><span class="dot"></span>sitemap.xml</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Structured Data</div>
+        <a class="nav-link" data-page="json-ld" href="json-ld.html"><span class="dot"></span>JSON-LD Basics</a>
+        <a class="nav-link" data-page="faq-schema" href="faq-schema.html"><span class="dot"></span>FAQ Schema</a>
+        <a class="nav-link" data-page="organization-schema" href="organization-schema.html"><span class="dot"></span>Organization Schema</a>
+        <a class="nav-link" data-page="author-eeat" href="author-eeat.html"><span class="dot"></span>Author / E-E-A-T Schema</a>
+        <a class="nav-link" data-page="breadcrumb-schema" href="breadcrumb-schema.html"><span class="dot"></span>Breadcrumb Schema</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Content &amp; Performance</div>
+        <a class="nav-link" data-page="image-seo" href="image-seo.html"><span class="dot"></span>Image SEO</a>
+        <a class="nav-link" data-page="performance-seo" href="performance-seo.html"><span class="dot"></span>Performance SEO</a>
+        <a class="nav-link" data-page="semantic-html" href="semantic-html.html"><span class="dot"></span>Semantic HTML</a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Architecture</div>
+        <a class="nav-link" data-page="internal-linking" href="internal-linking.html"><span class="dot"></span>Internal Linking</a>
+        <a class="nav-link" data-page="url-structure" href="url-structure.html"><span class="dot"></span>URL Structure</a>
+      </div>
+    </nav>
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <main class="main" role="main" id="main-content">
+      <div class="content">
+
+        <article aria-labelledby="image-seo-h1">
+          <h1 id="image-seo-h1">Image SEO</h1>
+
+          <div class="def-box">
+            <span class="callout-icon"></span>
+            <div>Images affect both search visibility (Google Images, SERP image results) and Core Web Vitals performance (LCP, CLS). Correct markup, modern formats, and responsive delivery are all required for optimal image SEO.</div>
+          </div>
+
+          <h2 id="img-markup">Complete image markup</h2>
+          <p>Use the <code>&lt;picture&gt;</code> element to serve modern formats (AVIF, WebP) with a JPEG fallback. Include explicit <code>width</code> and <code>height</code> attributes on the <code>&lt;img&gt;</code> to prevent layout shift. For the LCP (hero) image, set <code>fetchpriority="high"</code> to instruct the browser to prioritise the fetch.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-filename">Hero image — LCP candidate</span>
+              <div class="code-actions">
+                <span class="code-lang">HTML</span>
+                <button class="copy-btn" data-copy="img-markup">Copy</button>
+              </div>
+            </div>
+            <pre id="img-markup"><code><span class="p">&lt;</span><span class="t">picture</span><span class="p">&gt;</span>
+  <span class="c">&lt;!-- AVIF: best compression, modern browsers --&gt;</span>
+  <span class="p">&lt;</span><span class="t">source</span>
+    <span class="a">type</span><span class="p">=</span><span class="s">"image/avif"</span>
+    <span class="a">srcset</span><span class="p">=</span><span class="s">"
+      /assets/images/hero-480w.avif  480w,
+      /assets/images/hero-800w.avif  800w,
+      /assets/images/hero-1200w.avif 1200w
+    "</span>
+    <span class="a">sizes</span><span class="p">=</span><span class="s">"(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"</span>
+  <span class="p">/&gt;</span>
+
+  <span class="c">&lt;!-- WebP: good compression, broad support --&gt;</span>
+  <span class="p">&lt;</span><span class="t">source</span>
+    <span class="a">type</span><span class="p">=</span><span class="s">"image/webp"</span>
+    <span class="a">srcset</span><span class="p">=</span><span class="s">"
+      /assets/images/hero-480w.webp  480w,
+      /assets/images/hero-800w.webp  800w,
+      /assets/images/hero-1200w.webp 1200w
+    "</span>
+    <span class="a">sizes</span><span class="p">=</span><span class="s">"(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"</span>
+  <span class="p">/&gt;</span>
+
+  <span class="c">&lt;!-- JPEG: universal fallback --&gt;</span>
+  <span class="p">&lt;</span><span class="t">img</span>
+    <span class="a">src</span><span class="p">=</span><span class="s">"/assets/images/hero-1200w.jpg"</span>
+    <span class="a">srcset</span><span class="p">=</span><span class="s">"
+      /assets/images/hero-480w.jpg  480w,
+      /assets/images/hero-800w.jpg  800w,
+      /assets/images/hero-1200w.jpg 1200w
+    "</span>
+    <span class="a">sizes</span><span class="p">=</span><span class="s">"(max-width: 600px) 480px, (max-width: 900px) 800px, 1200px"</span>
+    <span class="a">alt</span><span class="p">=</span><span class="s">"Technical SEO reference documentation interface showing structured data examples"</span>
+    <span class="a">width</span><span class="p">=</span><span class="s">"1200"</span>
+    <span class="a">height</span><span class="p">=</span><span class="s">"630"</span>
+    <span class="a">fetchpriority</span><span class="p">=</span><span class="s">"high"</span>
+    <span class="a">loading</span><span class="p">=</span><span class="s">"eager"</span>
+    <span class="a">decoding</span><span class="p">=</span><span class="s">"sync"</span>
+  <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="t">picture</span><span class="p">&gt;</span></code></pre>
+          </div>
+
+          <h2 id="img-lazy">Lazy-loading below-fold images</h2>
+          <p>Images that appear below the fold should use <code>loading="lazy"</code> to defer their fetch until the user scrolls near them. Do not apply lazy loading to the LCP image or any image visible in the initial viewport — doing so directly harms Core Web Vitals.</p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-filename">Below-fold image — lazy loaded</span>
+              <div class="code-actions">
+                <span class="code-lang">HTML</span>
+                <button class="copy-btn" data-copy="img-lazy">Copy</button>
+              </div>
+            </div>
+            <pre id="img-lazy"><code><span class="p">&lt;</span><span class="t">picture</span><span class="p">&gt;</span>
+  <span class="p">&lt;</span><span class="t">source</span>
+    <span class="a">type</span><span class="p">=</span><span class="s">"image/avif"</span>
+    <span class="a">srcset</span><span class="p">=</span><span class="s">"/assets/images/diagram-800w.avif 800w, /assets/images/diagram-400w.avif 400w"</span>
+    <span class="a">sizes</span><span class="p">=</span><span class="s">"(max-width: 600px) 400px, 800px"</span>
+  <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="t">source</span>
+    <span class="a">type</span><span class="p">=</span><span class="s">"image/webp"</span>
+    <span class="a">srcset</span><span class="p">=</span><span class="s">"/assets/images/diagram-800w.webp 800w, /assets/images/diagram-400w.webp 400w"</span>
+    <span class="a">sizes</span><span class="p">=</span><span class="s">"(max-width: 600px) 400px, 800px"</span>
+  <span class="p">/&gt;</span>
+  <span class="p">&lt;</span><span class="t">img</span>
+    <span class="a">src</span><span class="p">=</span><span class="s">"/assets/images/diagram-800w.jpg"</span>
+    <span class="a">alt</span><span class="p">=</span><span class="s">"Diagram showing the relationship between canonical tags and duplicate URLs"</span>
+    <span class="a">width</span><span class="p">=</span><span class="s">"800"</span>
+    <span class="a">height</span><span class="p">=</span><span class="s">"450"</span>
+    <span class="a">loading</span><span class="p">=</span><span class="s">"lazy"</span>
+    <span class="a">decoding</span><span class="p">=</span><span class="s">"async"</span>
+  <span class="p">/&gt;</span>
+<span class="p">&lt;/</span><span class="t">picture</span><span class="p">&gt;</span></code></pre>
+          </div>
+
+          <h2 id="img-alt">Alt text guidelines</h2>
+          <p>Alt text is read by screen readers, displayed when images fail to load, and used by Google to understand image content. Write alt text that describes what is visually meaningful about the image in the context of the surrounding content.</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Image type</th>
+                  <th>Alt text approach</th>
+                  <th>Example</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Informational / editorial</td>
+                  <td>Describe the content and its relevance to the surrounding text</td>
+                  <td><code>alt="Bar chart comparing LCP scores before and after preload optimisation"</code></td>
+                </tr>
+                <tr>
+                  <td>Product image</td>
+                  <td>Include product name, key attributes, and variant details</td>
+                  <td><code>alt="Blue leather notebook A5 with elastic closure, front view"</code></td>
+                </tr>
+                <tr>
+                  <td>Logo</td>
+                  <td>State the brand name; do not describe the graphic</td>
+                  <td><code>alt="SEO Reference"</code></td>
+                </tr>
+                <tr>
+                  <td>Decorative / background</td>
+                  <td>Empty string — do not describe decorative content</td>
+                  <td><code>alt=""</code></td>
+                </tr>
+                <tr>
+                  <td>Icon with adjacent text label</td>
+                  <td>Empty string — the label provides the accessible name</td>
+                  <td><code>alt=""</code></td>
+                </tr>
+                <tr>
+                  <td>Image link (no text)</td>
+                  <td>Describe the link destination, not the image appearance</td>
+                  <td><code>alt="Go to homepage"</code></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="img-filename">Filename conventions</h2>
+          <p>Google reads filenames as a relevance signal for Google Images ranking. Use descriptive, hyphen-separated slugs that reflect the image content. Avoid generic names like <code>image1.jpg</code> or CMS-generated hashes.</p>
+
+          <div class="two-col">
+            <div class="mini-card mini-card-avoid">
+              <div class="mini-card-header">Avoid</div>
+              <ul>
+                <li><code>IMG_4821.jpg</code></li>
+                <li><code>image1.png</code></li>
+                <li><code>photo.webp</code></li>
+                <li><code>DSC00123_final_v2.jpg</code></li>
+                <li><code>untitled-export.avif</code></li>
+                <li><code>screenshot 2025-03.png</code> (spaces)</li>
+              </ul>
+            </div>
+            <div class="mini-card mini-card-use">
+              <div class="mini-card-header">Use</div>
+              <ul>
+                <li><code>technical-seo-reference-hero.avif</code></li>
+                <li><code>canonical-tag-diagram.webp</code></li>
+                <li><code>organization-schema-knowledge-panel.jpg</code></li>
+                <li><code>lcp-before-after-chart.png</code></li>
+                <li><code>breadcrumb-serp-example.webp</code></li>
+                <li><code>robots-txt-crawl-budget.avif</code></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="page-nav">
+            <a class="page-nav-item" href="breadcrumb-schema.html">
+              <div class="page-nav-label">&#8592; Previous</div>
+              <div class="page-nav-title">Breadcrumb Schema</div>
+            </a>
+            <a class="page-nav-item next" href="performance-seo.html">
+              <div class="page-nav-label">Next &#8594;</div>
+              <div class="page-nav-title">Performance SEO</div>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <aside class="toc" aria-label="On this page">
+      <div class="toc-title">On this page</div>
+      <div id="toc-content"></div>
+    </aside>
+
+  </div>
+
+  <script src="../assets/js/seo.js" defer></script>
+</body>
+</html>

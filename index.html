@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Technical SEO Reference for Developers — SEO Reference</title>
+  <meta name="description" content="A complete technical SEO reference for developers. Covers title tags, meta descriptions, structured data, sitemaps, robots.txt, canonical URLs, Core Web Vitals, and more — with real file examples." />
+  <link rel="canonical" href="https://kb-rc.github.io/SEO-For-Developers/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://kb-rc.github.io/SEO-For-Developers/" />
+  <meta property="og:title"       content="Technical SEO Reference for Developers" />
+  <meta property="og:description" content="A complete technical SEO reference for developers. Covers title tags, structured data, sitemaps, robots.txt, and more." />
+  <meta property="og:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:site_name"   content="SEO Reference" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:site"        content="@seodocsdev" />
+  <meta name="twitter:title"       content="Technical SEO Reference for Developers" />
+  <meta name="twitter:description" content="A complete technical SEO reference for developers." />
+  <meta name="twitter:image"       content="https://kb-rc.github.io/SEO-For-Developers/assets/images/og-cover.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Syne:wght@400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://kb-rc.github.io/SEO-For-Developers/#organization",
+    "name": "SEO Reference",
+    "url": "https://kb-rc.github.io/SEO-For-Developers/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://kb-rc.github.io/SEO-For-Developers/assets/images/logo.png",
+      "width": 512,
+      "height": 512
+    },
+    "description": "Technical SEO documentation for developers.",
+    "sameAs": [
+      "https://github.com/kb-rc"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: WebSite with SearchAction -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "SEO Reference",
+    "url": "https://kb-rc.github.io/SEO-For-Developers/",
+    "description": "Technical SEO documentation for developers",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://kb-rc.github.io/SEO-For-Developers/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a canonical tag used for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A canonical tag tells search engines which URL is the authoritative version of a page when duplicate or near-duplicate content exists across multiple URLs."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between robots.txt and noindex?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "robots.txt blocks crawlers from accessing a URL entirely. noindex allows crawling but instructs the crawler not to include the page in search results. Use robots.txt to save crawl budget; use noindex to exclude pages you still need crawled."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does page speed affect SEO rankings?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Google uses Core Web Vitals (LCP, CLS, INP) as ranking signals. Preloading critical assets, lazy-loading below-fold images, and serving next-gen image formats directly improve these metrics."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body data-page="intro">
+
+  <header class="header" role="banner">
+    <div class="header-logo">
+      <a href="index.html">
+        <div class="logo-icon">
+          <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M2 2h5v5H2zM9 2h5v5H9zM2 9h5v5H2zM11.5 9.5l2 4-2 .5-1-2.5-1 2.5-2-.5z"/>
+          </svg>
+        </div>
+        <span class="logo-text">SEO<span>Ref</span></span>
+      </a>
+    </div>
+
+    <nav class="header-nav" role="navigation" aria-label="Primary">
+      <div class="header-search" role="search" aria-label="Site search">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5l3 3"/>
+        </svg>
+        Search docs&hellip;
+        <kbd>&#8984;K</kbd>
+      </div>
+    </nav>
+
+    <div class="header-actions">
+      <button class="btn-icon mobile-menu-btn" id="mobile-menu-btn" aria-label="Toggle navigation" aria-expanded="false">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <path d="M1 3h14M1 8h14M1 13h14"/>
+        </svg>
+      </button>
+      <button class="btn-icon" id="theme-toggle" title="Toggle theme" aria-label="Toggle color theme">
+        <svg id="icon-sun" viewBox="0 0 16 16" fill="currentColor" style="display:none" aria-hidden="true">
+          <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg>
+        <svg id="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+          <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <nav class="sidebar" id="sidebar" role="navigation" aria-label="Documentation">
+      <div class="nav-group">
+        <div class="nav-group-label">Getting Started</div>
+        <a class="nav-link" data-page="intro" href="index.html">
+          <span class="dot"></span>Introduction
+        </a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">On-Page Tags</div>
+        <a class="nav-link" data-page="title-tags" href="docs/title-tags.html">
+          <span class="dot"></span>Title Tags
+        </a>
+        <a class="nav-link" data-page="meta-descriptions" href="docs/meta-descriptions.html">
+          <span class="dot"></span>Meta Descriptions
+        </a>
+        <a class="nav-link" data-page="open-graph" href="docs/open-graph.html">
+          <span class="dot"></span>Open Graph / Social
+        </a>
+        <a class="nav-link" data-page="canonical-tags" href="docs/canonical-tags.html">
+          <span class="dot"></span>Canonical Tags
+        </a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Crawling &amp; Indexing</div>
+        <a class="nav-link" data-page="robots-txt" href="docs/robots-txt.html">
+          <span class="dot"></span>robots.txt
+        </a>
+        <a class="nav-link" data-page="sitemap-xml" href="docs/sitemap-xml.html">
+          <span class="dot"></span>sitemap.xml
+        </a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Structured Data</div>
+        <a class="nav-link" data-page="json-ld" href="docs/json-ld.html">
+          <span class="dot"></span>JSON-LD Basics
+        </a>
+        <a class="nav-link" data-page="faq-schema" href="docs/faq-schema.html">
+          <span class="dot"></span>FAQ Schema
+        </a>
+        <a class="nav-link" data-page="organization-schema" href="docs/organization-schema.html">
+          <span class="dot"></span>Organization Schema
+        </a>
+        <a class="nav-link" data-page="author-eeat" href="docs/author-eeat.html">
+          <span class="dot"></span>Author / E-E-A-T Schema
+        </a>
+        <a class="nav-link" data-page="breadcrumb-schema" href="docs/breadcrumb-schema.html">
+          <span class="dot"></span>Breadcrumb Schema
+        </a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Content &amp; Performance</div>
+        <a class="nav-link" data-page="image-seo" href="docs/image-seo.html">
+          <span class="dot"></span>Image SEO
+        </a>
+        <a class="nav-link" data-page="performance-seo" href="docs/performance-seo.html">
+          <span class="dot"></span>Performance SEO
+        </a>
+        <a class="nav-link" data-page="semantic-html" href="docs/semantic-html.html">
+          <span class="dot"></span>Semantic HTML
+        </a>
+      </div>
+      <div class="nav-group">
+        <div class="nav-group-label">Architecture</div>
+        <a class="nav-link" data-page="internal-linking" href="docs/internal-linking.html">
+          <span class="dot"></span>Internal Linking
+        </a>
+        <a class="nav-link" data-page="url-structure" href="docs/url-structure.html">
+          <span class="dot"></span>URL Structure
+        </a>
+      </div>
+    </nav>
+
+    <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+    <main class="main" role="main" id="main-content">
+      <div class="content">
+
+        <article aria-labelledby="intro-h1">
+          <div class="hero">
+            <h1 id="intro-h1">Technical SEO Reference</h1>
+            <p>A developer-focused reference covering every technical SEO concept — from meta tags to structured data — with exact, copy-paste implementations referencing this site's own files.</p>
+            <div class="hero-chips">
+              <span class="chip">HTML5</span>
+              <span class="chip">JSON-LD</span>
+              <span class="chip">Schema.org</span>
+              <span class="chip">robots.txt</span>
+              <span class="chip">sitemap.xml</span>
+              <span class="chip">Core Web Vitals</span>
+            </div>
+          </div>
+
+          <div class="topic-grid">
+            <a class="topic-card" href="docs/title-tags.html">
+              <div class="topic-card-icon">Tt</div>
+              <h4>Title Tags</h4>
+              <p>Format, length, and placement rules</p>
+            </a>
+            <a class="topic-card" href="docs/meta-descriptions.html">
+              <div class="topic-card-icon">Md</div>
+              <h4>Meta Descriptions</h4>
+              <p>Character limits and CTR optimization</p>
+            </a>
+            <a class="topic-card" href="docs/open-graph.html">
+              <div class="topic-card-icon">OG</div>
+              <h4>Open Graph</h4>
+              <p>Social sharing previews for all platforms</p>
+            </a>
+            <a class="topic-card" href="docs/canonical-tags.html">
+              <div class="topic-card-icon">Cn</div>
+              <h4>Canonical Tags</h4>
+              <p>Deduplication and consolidation</p>
+            </a>
+            <a class="topic-card" href="docs/robots-txt.html">
+              <div class="topic-card-icon">Rb</div>
+              <h4>robots.txt</h4>
+              <p>Crawl directives and patterns</p>
+            </a>
+            <a class="topic-card" href="docs/sitemap-xml.html">
+              <div class="topic-card-icon">Sm</div>
+              <h4>sitemap.xml</h4>
+              <p>XML structure and submission</p>
+            </a>
+            <a class="topic-card" href="docs/json-ld.html">
+              <div class="topic-card-icon">LD</div>
+              <h4>JSON-LD</h4>
+              <p>Structured data for rich results</p>
+            </a>
+            <a class="topic-card" href="docs/performance-seo.html">
+              <div class="topic-card-icon">Pf</div>
+              <h4>Performance</h4>
+              <p>Preload, lazy-load, Core Web Vitals</p>
+            </a>
+            <a class="topic-card" href="docs/semantic-html.html">
+              <div class="topic-card-icon">Sh</div>
+              <h4>Semantic HTML</h4>
+              <p>Landmark elements and heading hierarchy</p>
+            </a>
+            <a class="topic-card" href="docs/url-structure.html">
+              <div class="topic-card-icon">Url</div>
+              <h4>URL Structure</h4>
+              <p>Slug format and path best practices</p>
+            </a>
+          </div>
+
+          <hr class="divider" />
+
+          <h2 id="how-it-works">How this reference works</h2>
+          <p>Every code example references an <strong>actual file</strong> from this documentation site. No abstract pseudocode. Files referenced throughout:</p>
+
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>File</th><th>Purpose</th></tr></thead>
+              <tbody>
+                <tr><td><code>index.html</code></td><td>Site root — all head meta tags</td></tr>
+                <tr><td><code>docs/title-tags.html</code></td><td>Documentation page — page-specific schema</td></tr>
+                <tr><td><code>robots.txt</code></td><td>Crawl control file at domain root</td></tr>
+                <tr><td><code>sitemap.xml</code></td><td>XML sitemap — all crawlable URLs</td></tr>
+                <tr><td><code>assets/js/seo.js</code></td><td>Dynamic JSON-LD injection and utilities</td></tr>
+                <tr><td><code>assets/css/style.css</code></td><td>Global styles including semantic layout</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="page-nav">
+            <a class="page-nav-item next" href="docs/title-tags.html">
+              <div class="page-nav-label">Next</div>
+              <div class="page-nav-title">Title Tags &#8594;</div>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <aside class="toc" aria-label="On this page">
+      <div class="toc-title">On this page</div>
+      <div id="toc-content"></div>
+    </aside>
+
+  </div>
+
+  <script src="assets/js/seo.js" defer></script>
+</body>
+</html>
